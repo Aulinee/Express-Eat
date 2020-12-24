@@ -14,12 +14,14 @@ CREATE TABLE Customer (
   Country    varchar(255) NOT NULL, 
   PostalCode int(10) NOT NULL, 
   PRIMARY KEY (ID));
+  
 CREATE TABLE Review (
   ID         int(10) NOT NULL AUTO_INCREMENT, 
   CustomerID int(10) NOT NULL, 
   Comment    varchar(1000) NOT NULL, 
   Rating     int(1) NOT NULL, 
   PRIMARY KEY (ID));
+
 CREATE TABLE Order (
   ID                        int(10) NOT NULL AUTO_INCREMENT, 
   CustomerID                int(10) NOT NULL, 
@@ -27,6 +29,7 @@ CREATE TABLE Order (
   OrderDate                 date NOT NULL, 
   Shopping_CartOrder_ItemID int(10) NOT NULL, 
   PRIMARY KEY (ID));
+
 CREATE TABLE Item (
   Code            int(10) NOT NULL AUTO_INCREMENT, 
   Name            varchar(255) NOT NULL, 
@@ -34,14 +37,17 @@ CREATE TABLE Item (
   QtyInStock      int(10) NOT NULL, 
   BuyPrice        numeric(19, 0) NOT NULL, 
   PRIMARY KEY (Code));
+
 CREATE TABLE Menu (
   ItemCode int(10) NOT NULL);
+
 CREATE TABLE Payment (
   CheckNum    varchar(255) NOT NULL, 
   CustomerID  int(10) NOT NULL, 
   PaymentDate date NOT NULL, 
   Amount      numeric(19, 0) NOT NULL, 
   PRIMARY KEY (CheckNum));
+
 CREATE TABLE Receipt (
   Receipt         int(10) NOT NULL AUTO_INCREMENT, 
   CustomerID      int(10) NOT NULL, 
@@ -49,20 +55,24 @@ CREATE TABLE Receipt (
   OrderID         int(10) NOT NULL, 
   GenerateDate    date NOT NULL, 
   PRIMARY KEY (Receipt));
+
 CREATE TABLE Order_List (
   OrderQueue  int(10) NOT NULL AUTO_INCREMENT, 
   OrderID     int(10) NOT NULL, 
   OrderStatus varchar(255) NOT NULL, 
   PRIMARY KEY (OrderQueue));
+
 CREATE TABLE Order_Item (
   ID        int(10) NOT NULL AUTO_INCREMENT, 
   ItemCode  int(10) NOT NULL, 
   Qty       int(10) NOT NULL, 
   PriceEach numeric(19, 0) NOT NULL, 
   PRIMARY KEY (ID));
+
 CREATE TABLE Shopping_Cart (
   Order_ItemID int(10) NOT NULL, 
   PRIMARY KEY (Order_ItemID));
+
 CREATE TABLE Delivery (
   ID                   int(10) NOT NULL AUTO_INCREMENT, 
   Order_ListOrderQueue int(10) NOT NULL, 
@@ -70,6 +80,7 @@ CREATE TABLE Delivery (
   DeliveryTime         time(7) NOT NULL, 
   DeliveryStatus       varchar(255) NOT NULL, 
   PRIMARY KEY (ID));
+
 CREATE TABLE Staff (
   ID                   int(10) NOT NULL AUTO_INCREMENT, 
   FirstName            varchar(255) NOT NULL, 
@@ -81,6 +92,7 @@ CREATE TABLE Staff (
   Order_ListOrderQueue int(10) NOT NULL, 
   StoreCode            int(10) NOT NULL, 
   PRIMARY KEY (ID));
+
 CREATE TABLE DeliveryMan (
   DeliveryID int(10) NOT NULL, 
   FirstName  varchar(255) NOT NULL, 
@@ -89,6 +101,7 @@ CREATE TABLE DeliveryMan (
   Password   varchar(25) NOT NULL, 
   Email      varchar(255) NOT NULL, 
   Phone      int(11) NOT NULL);
+
 CREATE TABLE Store (
   Code       int(10) NOT NULL AUTO_INCREMENT, 
   City       varchar(255) NOT NULL, 
@@ -99,6 +112,7 @@ CREATE TABLE Store (
   Country    varchar(255) NOT NULL, 
   PostalCode int(10) NOT NULL, 
   PRIMARY KEY (Code));
+
 CREATE TABLE Administrator (
   ID        int(10) NOT NULL AUTO_INCREMENT, 
   FirstName varchar(255) NOT NULL, 
@@ -108,6 +122,7 @@ CREATE TABLE Administrator (
   Password  varchar(25) NOT NULL, 
   StoreCode int(10) NOT NULL, 
   PRIMARY KEY (ID));
+
 ALTER TABLE Order ADD CONSTRAINT FKOrder556711 FOREIGN KEY (CustomerID) REFERENCES Customer (ID);
 ALTER TABLE Menu ADD CONSTRAINT FKMenu452447 FOREIGN KEY (ItemCode) REFERENCES Item (Code);
 ALTER TABLE Payment ADD CONSTRAINT FKPayment75777 FOREIGN KEY (CustomerID) REFERENCES Customer (ID);
