@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleAudrey.css">
 </head>
 <body>
-    <h1 class="expressEat"><p class="logo"><img src="Logo-04.png" alt="logo" width="25px"></p>ExpressEat
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </h1>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img class="main-logo" src="Logo-04.png" alt="logo" width="50px">
+                <h1 class="main-title">ExpressEat</h1>
+            </div>
+           <nav>
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <div class="container-hamburger-icon" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </li>
+            </ul>
+           </nav> 
+        </div>
+    </header>
+    <script src="dashboard.js"></script>
 </body>
 </html>
