@@ -29,6 +29,7 @@ header a{
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
+    font: bold;
     transition-duration: 0.4s;
 }
 
@@ -44,6 +45,12 @@ header li{
 
 header #branding{
     float: left;
+    transition-duration: 0.4s;
+}
+
+header #branding:hover{
+    cursor: pointer;
+    color: #ffa200;
 }
 
 header #branding h1{
@@ -67,6 +74,9 @@ header .main-title{
 
 /*Hamburger icon*/
 .container-hamburger-icon{
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 0px 0px 20px;
     float: right;
 }
 
@@ -75,7 +85,10 @@ header .main-title{
     height: 5px;
     background-color: white;
     margin: 6px 0;
-    transition: 0.4s;
+    transition: 0.1s;
+}
+.bar1:hover, .bar2:hover, .bar3:hover{
+    opacity: 0.5;
 }
 
 .change .bar1 {
