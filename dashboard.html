@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -15,13 +16,15 @@
         <div class="container">
             <div id="branding">
                 <img class="main-logo" src="Logo-04.png" alt="logo" width="50px">
-                <h1 class="main-title">ExpressEat</h1>
+                <h1 class="main-title">ExpressEat Dashboard</h1>
             </div>
             <div class="navigation-bar">
                 <nav>
                     <ul>
-                        <li class="current"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li class="current"><a href="#">Home</a></li>
+                        <li><a href="#">User Account</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Transaction</a></li>
                     </ul>
                </nav>
                <div class="dropdown">
@@ -38,12 +41,108 @@
             </div>
         </div>
     </header>
-    <div class="sidebar">
+    <section id="summary-button">
+        <div class="flexbox-container-1 summary-box">
+            <h1 id="total-text">Total Sales</h1>
+            <h2 id="total-sales">3333</h2>
+        </div>
+        <div class="flexbox-container-1 summary-box">
+            <h1 id="total-text">Total User</h1>
+            <h2 id="total-user">3333</h2>
+        </div>
+        <div class="flexbox-container-1 summary-box">
+            <h1 id="total-text">Total order</h1>
+            <h2 id="total-order">3333</h2>
+        </div>
+    </section>
 
-    </div>
-    <div class="main-content">
-
-    </div>
-    <script src="dashboard.js"></script>
+    <section class="table-1">
+        <h1>List of Users Account</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Change %</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td>AAC</td>
+                <td>AUSTRALIAN COMPANY </td>
+                <td>$1.38</td>
+                <td>+2.01</td>
+                <td>-0.36%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="table-1">
+        <h1>List of Products</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Change %</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td>AAC</td>
+                <td>AUSTRALIAN COMPANY </td>
+                <td>$1.38</td>
+                <td>+2.01</td>
+                <td>-0.36%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="table-1">
+        <h1>Order Transaction</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Change %</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td>AAC</td>
+                <td>AUSTRALIAN COMPANY </td>
+                <td>$1.38</td>
+                <td>+2.01</td>
+                <td>-0.36%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      
 </body>
 </html>
