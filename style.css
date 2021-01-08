@@ -63,7 +63,6 @@ header nav{
 }
 
 header .navigation-bar{
-    width: 40%;
     padding-left: 78%;
 }
 
@@ -122,3 +121,14 @@ header .main-title{
     display: block;
 }
 
+/*sidebar*/
+.sidebar{
+    width: 20%;
+    background-color: beige;
+}
+
+/*main dashboard*/
+.main-content{
+    background-image: beige;
+    width: 80%;
+}
