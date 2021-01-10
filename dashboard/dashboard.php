@@ -99,10 +99,10 @@
             <thead>
               <tr>
                 <th>Code</th>
-                <th>Company</th>
-                <th>Price</th>
-                <th>Change</th>
-                <th>Change %</th>
+                <th>Name</th>
+                <th>Item Description</th>
+                <th>Quantity</th>
+                <th>Buy Price</th>
               </tr>
             </thead>
           </table>
@@ -123,32 +123,20 @@
           </button>
         </h1>
         <div class="tbl-header">
-          <table cellpadding="0" cellspacing="0" border="0">
+        <table cellpadding="0" cellspacing="0" border="0">
             <thead>
-              <tr>
-                <th>Code</th>
-                <th>Company</th>
-                <th>Price</th>
-                <th>Change</th>
-                <th>Change %</th>
-              </tr>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Customer ID</th>
+                    <th>Payment Date</th>
+                    <th>Amount</th>
+                </tr>
             </thead>
-          </table>
+        </table>
         </div>
         <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-            </tbody>
-          </table>
+            <?php include 'transactionList.php';?>
         </div>
-      </section>
-      
+      </section>  
 </body>
 </html>

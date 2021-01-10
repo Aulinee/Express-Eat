@@ -17,15 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (mysqli_query($conn, $sql)) {
         echo "Record deleted successfully";
+        //Redirect to main page
+        header("Location: userAccount.php");
+        exit();
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
+        header("Location: deleteCustomer.html");
     }
 
     mysqli_close($conn);
 
-    //Redirect to main page
-    header("Location: userAccount.php");
-    exit();
 }
 
 ?>

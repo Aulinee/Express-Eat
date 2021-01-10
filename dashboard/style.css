@@ -18,9 +18,6 @@ body{
     font-family: 'Playfair Display', sans-serif;
 }
 
-/*Colour*/
-
-
 /*global*/
 .container{
     margin: auto;
@@ -314,50 +311,10 @@ header .main-title{
 
   /* Search and filter */
 .list-title{
-    margin: 0 0 3% 25%;
-}
-
-.search {
-    width: 80%;
-    position: relative;
-    display: flex;
-  }
-  
-  .searchTerm {
-    width: 100%;
-    border: 3px solid #504545;
-    border-right: none;
-    padding: 5px;
-    height: 30px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-  }
-  
-  .searchTerm:focus{
-    color: #504545;
-  }
-  
-  .searchButton {
-    width: 40px;
-    height: 46px;
-    border: 1px solid #504545;
-    background: #504545;
+    border-bottom: solid 3px var(--black);
     text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  /*Resize the wrap to see the search bar change!*/
-  .wrap{
-    width: 85%;
-    position: absolute;
-    top: 38%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-  }
+    margin-bottom: 3%;
+}
 
   /* RESET RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -368,7 +325,7 @@ header .main-title{
   }
 
   .filter-container {
-    margin: 1% 23% 0 0;
+    margin: 0% 0% 0 0;
   }
   
   .filter-container img {
@@ -463,7 +420,14 @@ header .main-title{
 [value="BuyPrice"]:checked ~ .filters [for="replacePrice"],
 
 [value="Code"]:checked ~ .filters [for="deleteCode"],
-[value="Name"]:checked ~ .filters [for="deleteName"]{
+[value="Name"]:checked ~ .filters [for="deleteName"],
+
+[value="CheckNum"]:checked ~ .filters [for="searchCheckNum"],
+
+[value="CheckNum"]:checked ~ .filters [for="replaceCheckNum"],
+[value="CustomerID"]:checked ~ .filters [for="replaceCustomerID"],
+[value="PaymentDate"]:checked ~ .filters [for="replacePaymentDate"],
+[value="Amount"]:checked ~ .filters [for="replaceAmount"]{
   background: var(--green);
   color: var(--white);
 }
@@ -501,7 +465,7 @@ header .main-title{
 }
 
 /* Style inputs, select elements and textareas */
-.col-75 input[type=text], .col-75 input[type=number], .col-75 textarea{
+.col-75 input[type=text], .col-75 input[type=number], .col-75 textarea, .col-75 input[type=datetime-local]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -530,15 +494,15 @@ input[type=submit] {
 /* Floating column for labels: 25% width */
 .col-25 {
     float: left;
-    width: 20%;
-    margin-top: 6px;
+    width: 30%;
+    margin-top: 15px;
 }
 
 /* Floating column for inputs: 75% width */
 .col-75 {
     float: left;
-    width: 80%;
-    margin-top: 6px;
+    width: 70%;
+    margin-top: 20px;
 }
 
 /* Clear floats after the columns */
@@ -572,3 +536,85 @@ input[type=submit] {
 .clear{
   padding: 14px 40px;
 }
+
+.update-details{
+    display: block;
+}
+
+.update-box {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .update-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #378f74;
+    text-align: center;
+  }
+  
+  .update-box .user-box {
+    position: relative;
+  }
+  
+  .update-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--black);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--black);;
+    outline: none;
+    background: transparent;
+  }
+  .update-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--black);
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .update-box .user-box input:focus ~ label,
+  .update-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--black);
+    font-size: 12px;
+  }
+  
+  .update-box form button {
+    border: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--green);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 5%;
+    margin-left: 40%;
+    letter-spacing: 4px
+  }
+  
+  .update-box button:hover {
+    background: var(--yellow);
+    color: #fff;
+    border-radius: 50px;
+  }
+  
+  

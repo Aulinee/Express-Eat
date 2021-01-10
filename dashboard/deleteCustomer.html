@@ -40,28 +40,33 @@
             </div>
         </div>
     </header>
-    <div class="wrap">
+    <div class="update-box">
         <h1 class="list-title">DELETE CUSTOMER ACCOUNT</h1>
         <form name="search-table" action="deleteCustomer.php" method="post">
-            <div class="search">
-                <input type="text" class="searchTerm" name="user-data" placeholder="Submit Your Data">
-                <button type="submit" class="searchButton">
-                    <i style="font-size:24px; color: white;" class="fa">&#xf061;</i>
-                </button>
+            <div class="search-box">
+                <h2>Search By</h2>
+                <div class="filter-container">
+                    <input type="radio" id="searchID" name="search-user" value="ID" checked>
+                    <input type="radio" id="searchUsername" name="search-user" value="Username">
+                    <ol class="filters">
+                    <li>
+                        <label for="searchID">Customer ID</label>
+                    </li>
+                    <li>
+                        <label for="searchUsername">Username</label>
+                    </li>
+                    </ol>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="user-data">
+                    <label>Delete Detail</label>
+                </div>
             </div>
-            <div class="filter-container">
-                <input type="radio" id="searchID" name="search-user" value="ID" checked>
-                <input type="radio" id="searchUsername" name="search-user" value="Username">
-                <ol class="filters">
-                <li>
-                    <label for="searchID">Customer ID</label>
-                </li>
-                <li>
-                    <label for="searchUsername">Username</label>
-                </li>
-                </ol>
-            </div>
+            <button type="submit" onclick="return validateFormDelete()">
+                Submit
+            </button>
         </form>
     </div>
+    <script src="editCustomer.js"></script>
 </body>
 </html>

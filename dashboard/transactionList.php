@@ -3,7 +3,7 @@
 include "dbConnection.php";
 
 // Retrieve all product record from customer Table in database
-$SQLstring = "SELECT * FROM Item";
+$SQLstring = "SELECT * FROM Payment";
 $result = mysqli_query($conn, $SQLstring);
 
 if($result = mysqli_query($conn, $SQLstring)){
@@ -12,11 +12,10 @@ if($result = mysqli_query($conn, $SQLstring)){
         while($row = mysqli_fetch_array($result)){
             echo "<tbody>";
                 echo "<tr>";
-                    echo "<td>" . $row['Code'] . "</td>";
-                    echo "<td>" . $row['Name'] . "</td>";
-                    echo "<td>" . $row['ItemDescription'] . "</td>";
-                    echo "<td>" . $row['QtyInStock'] . "</td>";
-                    echo "<td>" . $row['BuyPrice'] . "</td>";
+                    echo "<td>" . $row['CheckNum'] . "</td>";
+                    echo "<td>" . $row['CustomerID'] . "</td>";
+                    echo "<td>" . $row['PaymentDate'] . "</td>";
+                    echo "<td>" . $row['Amount'] . "</td>";
                 echo "</tr>";
             echo "</tbody>";
         }
@@ -29,6 +28,7 @@ if($result = mysqli_query($conn, $SQLstring)){
 } else{
     echo "ERROR: Could not able to execute $SQLstring. " . mysqli_error($conn);
 }
+
 
 mysqli_close($conn);
 ?>

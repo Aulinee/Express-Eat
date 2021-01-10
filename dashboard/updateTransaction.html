@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Delete Product</title>
+    <title>Update Transaction Record</title>
 </head>
 <body>
     <header>
@@ -22,8 +22,8 @@
                     <ul>
                         <li><a href="dashboard.php">Home</a></li>
                         <li><a href="userAccount.php">User Account</a></li>
-                        <li class="current"><a href="product.php">Product</a></li>
-                        <li><a href="transaction.php">Transaction</a></li>
+                        <li><a href="product.php">Product</a></li>
+                        <li class="current"><a href="transaction.php">Transaction</a></li>
                     </ul>
                </nav>
                <div class="dropdown">
@@ -41,25 +41,48 @@
         </div>
     </header>
     <div class="update-box">
-        <h1 class="list-title">DELETE PRODUCT DETAILS</h1>
-        <form name="search-table" action="deleteItem.php" method="post">
+        <h1 class="list-title">UPDATE TRANSACTION DETAILS</h1>
+        <form name="search-table" action="updateTransaction.php" method="post">
             <div class="search-box">
                 <h2>Search By</h2>
                 <div class="filter-container">
-                    <input type="radio" id="deleteCode" name="delete-category" value='Code' checked>
-                    <input type="radio" id="deleteName" name="delete-category" value='Name'>
+                    <input type="radio" id="searchCheckNum" name="search-user" value="CheckNum" checked>
                     <ol class="filters">
-                        <li>
-                            <label for="deleteCode">Code Number</label>
-                        </li>
-                        <li>
-                            <label for="deleteName">Item Name</label>
-                        </li>
+                    <li>
+                        <label for="searchCheckNum">Payment ID</label>
+                    </li>
                     </ol>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="delete-data">
-                    <label>Delete Detail</label>
+                    <input type="text" name="search-data">
+                    <label>Search Detail</label>
+                </div>
+            </div>
+            <div class="search-box">
+                <h2>Update By</h2>
+                <div class="filter-container">
+                    <input type="radio" id="replaceCheckNum" name="replace-user" value="CheckNum" checked>
+                    <input type="radio" id="replaceCustomerID" name="replace-user" value="CustomerID">
+                    <input type="radio" id="replacePaymentDate" name="replace-user" value="PaymentDate">
+                    <input type="radio" id="replaceAmount" name="replace-user" value="Amount">
+                    <ol class="filters">
+                    <li>
+                        <label for="replaceCheckNum">Payment ID</label>
+                    </li>
+                    <li>
+                        <label for="replaceCustomerID">Customer ID</label>
+                    </li>
+                    <li>
+                        <label for="replacePaymentDate">Payment Date</label>
+                    </li>
+                    <li>
+                        <label for="replaceAmount">Amount</label>
+                    </li>
+                    </ol>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="replace-data">
+                    <label>Update Detail</label>
                 </div>
             </div>
             <button type="submit" onclick="return validateFormUpdate()">
@@ -67,6 +90,6 @@
             </button>
         </form>
     </div>
-    <script src="editProduct.js"></script>
+    <script src="editTransaction.js"></script>
 </body>
 </html>

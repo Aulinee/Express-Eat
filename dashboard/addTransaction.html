@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Transaction Record</title>
+    <title>Add New Payment Record</title>
 </head>
 <body>
     <header>
@@ -40,44 +40,51 @@
             </div>
         </div>
     </header>
-     <!--List of transaction -->
-     <section class="table-1 customer-table">
-        <h1>
-            List of Transaction
-            <button class="button tooltip">
-                <span>
-                    <a href="addTransaction.html">&#43;</a>
-                    <span class="tooltiptext">Click to add</span>
-                </span>
-            </button>
-            <button class="button tooltip">
-                <span>
-                    <a href='updateTransaction.html'><i style='font-size:20px' class='fa'>&#xf040;</i></a>
-                    <span class="tooltiptext">Click to update</span>
-                </span>
-            </button>
-            <button class="button tooltip">
-                <span>
-                    <a href='deleteTransaction.html'><i style='font-size:20px' class='fa'>&#xf014;</i></a>
-                    <span class="tooltiptext">Click to delete</span>
-                </span>
-            </button>
-        </h1>
-        <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-                <tr>
-                    <th>Payment ID</th>
-                    <th>Customer ID</th>
-                    <th>Payment Date</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-        </table>
+     <div id="container-1">
+        <div id="main-header">
+            <h2 class="header">Add New Payment Transaction</h2>
         </div>
-        <div class="tbl-content">
-            <?php include 'transactionList.php';?>
+        <div id="details-section">
+          <form name="createPayment" action="addTransaction.php" method="post">
+                <div class="row">
+                    <div class="col-25">
+                    <label for="name">Payment ID</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="checknum" name="checknum" placeholder="#AB12">
+                    </div>
+                </div>
+              <div class="row">
+                  <div class="col-25">
+                    <label for="code">Customer ID</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="number" id="customerID" name="customerID" placeholder="1234">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="description">Payment Date</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="datetime-local" id="paymentdate" name="paymentdate" placeholder="1234">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="qty">Total Amount(RM)</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="number" id="amount" name="amount" placeholder="120.00">
+                  </div>
+                </div>
+                <div class="submission">
+                  <input class="btn register" type="submit" value="Add" onclick="return validateForm()">
+                  <input class="btn clear" type="submit" value="Clear" onclick="return clearForm()">
+                </div>
+          </form>
         </div>
-    </section>
+    </div>
+    <script src="addTransaction.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Transaction Record</title>
+    <title>Delete Transaction</title>
 </head>
 <body>
     <header>
@@ -40,44 +40,29 @@
             </div>
         </div>
     </header>
-     <!--List of transaction -->
-     <section class="table-1 customer-table">
-        <h1>
-            List of Transaction
-            <button class="button tooltip">
-                <span>
-                    <a href="addTransaction.html">&#43;</a>
-                    <span class="tooltiptext">Click to add</span>
-                </span>
+    <div class="update-box">
+        <h1 class="list-title">DELETE TRANSACTION DETAILS</h1>
+        <form name="search-table" action="deleteTransaction.php" method="post">
+            <div class="search-box">
+                <h2>Search By</h2>
+                <div class="filter-container">
+                    <input type="radio" id="searchCheckNum" name="delete-category" value="CheckNum" checked>
+                    <ol class="filters">
+                    <li>
+                        <label for="searchCheckNum">Payment ID</label>
+                    </li>
+                    </ol>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="delete-data">
+                    <label>Delete Detail</label>
+                </div>
+            </div>
+            <button type="submit" onclick="return validateFormDelete()">
+                Submit
             </button>
-            <button class="button tooltip">
-                <span>
-                    <a href='updateTransaction.html'><i style='font-size:20px' class='fa'>&#xf040;</i></a>
-                    <span class="tooltiptext">Click to update</span>
-                </span>
-            </button>
-            <button class="button tooltip">
-                <span>
-                    <a href='deleteTransaction.html'><i style='font-size:20px' class='fa'>&#xf014;</i></a>
-                    <span class="tooltiptext">Click to delete</span>
-                </span>
-            </button>
-        </h1>
-        <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-                <tr>
-                    <th>Payment ID</th>
-                    <th>Customer ID</th>
-                    <th>Payment Date</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-        </table>
-        </div>
-        <div class="tbl-content">
-            <?php include 'transactionList.php';?>
-        </div>
-    </section>
+        </form>
+    </div>
+    <script src="editTransaction.js"></script>
 </body>
 </html>
