@@ -1,3 +1,15 @@
+:root {
+    --black: #3a3a3a;
+    --white: #fff;
+    --green: #49b293;
+    --black: #000000;
+    --light-black: #24190b;
+    --dark-grey: #504545;
+    --white-brown: #Fcf5ea;
+    --yellow: #ffa200;
+    --brown: #b47a36;
+}
+
 body{
     font: 15px Segoe UI, Helvetica, sans-serif;
     padding: 0;
@@ -24,6 +36,14 @@ a{
     color: black;
     list-style: none;
     text-decoration: none;
+}
+
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
 }
 
 /*header*/
@@ -60,7 +80,6 @@ header li{
 header #branding{
     float: left;
     transition-duration: 0.4s;
-    margin-top: -10px;
 }
 
 header #branding:hover{
@@ -74,7 +93,7 @@ header #branding h1{
 }
 
 header nav{
-    padding: 0px 5px 0px 0px;
+    padding: 10px 5px 0px 0px;
 }
 
 header .navigation-bar{
@@ -175,7 +194,7 @@ header .main-title{
 /*Table to display user*/
 
 .table-1 .button {
-    background-color: #b47a36; /* Green */
+    background-color: var(--green);
     border: none;
     color: white;
     margin: 10px 0 0 0;
@@ -183,7 +202,7 @@ header .main-title{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 50px;
+    border-radius: 45px;
 }
 
 .table-1 .button:hover{
@@ -292,3 +311,264 @@ header .main-title{
   ::-webkit-scrollbar-thumb {
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   }
+
+  /* Search and filter */
+.list-title{
+    margin: 0 0 3% 25%;
+}
+
+.search {
+    width: 80%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #504545;
+    border-right: none;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #504545;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 46px;
+    border: 1px solid #504545;
+    background: #504545;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 85%;
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .filter-container {
+    margin: 1% 23% 0 0;
+  }
+  
+  .filter-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .filter-container ol {
+    list-style: none;
+  }
+  
+  .filter-container a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .filter-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-container h1 a {
+    transition: all 0.1s;
+  }
+  
+  .filter-container h1 a:hover {
+    background: var(--green);
+    color: var(--white);
+  }
+  
+  .filter-container input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  
+  /* FILTERS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .filter-container .filters {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-container .filters * {
+    display: inline-block;
+  }
+  
+  .filter-container .filters label {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 2rem;
+    min-width: 50px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  
+  .filter-container .filters label:hover {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  /* FILTERING RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[value="ID"]:checked ~ .filters [for="searchID"],
+[value="Username"]:checked ~ .filters [for="searchUsername"],
+[value="Firstname"]:checked ~ .filters [for="searchFirstname"],
+[value="Lastname"]:checked ~ .filters [for="searchLastname"],
+[value="City"]:checked ~ .filters [for="searchCity"],
+[value="State"]:checked ~ .filters [for="searchState"],
+[value="Country"]:checked ~ .filters [for="searchCountry"],
+
+[value="ID"]:checked ~ .filters [for="replaceID"],
+[value="Username"]:checked ~ .filters [for="replaceUsername"],
+[value="Firstname"]:checked ~ .filters [for="replaceFirstname"],
+[value="Lastname"]:checked ~ .filters [for="replaceLastname"],
+[value="City"]:checked ~ .filters [for="replaceCity"],
+[value="State"]:checked ~ .filters [for="replaceState"],
+[value="Country"]:checked ~ .filters [for="replaceCountry"],
+
+[value="Code"]:checked ~ .filters [for="searchCode"],
+[value="Name"]:checked ~ .filters [for="searchName"],
+[value="ItemDescription"]:checked ~ .filters [for="searchDescription"],
+[value="QtyInStock"]:checked ~ .filters [for="searchQuantity"],
+[value="BuyPrice"]:checked ~ .filters [for="searchPrice"],
+
+[value="Code"]:checked ~ .filters [for="replaceCode"],
+[value="Name"]:checked ~ .filters [for="replaceName"],
+[value="ItemDescription"]:checked ~ .filters [for="replaceDescription"],
+[value="QtyInStock"]:checked ~ .filters [for="replaceQuantity"],
+[value="BuyPrice"]:checked ~ .filters [for="replacePrice"],
+
+[value="Code"]:checked ~ .filters [for="deleteCode"],
+[value="Name"]:checked ~ .filters [for="deleteName"]{
+  background: var(--green);
+  color: var(--white);
+}
+  
+/*Table customer for CRUD*/
+.customer-table{
+    margin-top: 5%;
+}
+
+.customer-table a{
+    font-size: 30px;
+    padding: 6px 10px 4px 10px;
+}
+
+/*Add new data in dashboard*/
+#container-1{
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    background-color: var(--yellow);
+    margin: 5% auto;
+    padding: 20px 40px 60px 40px;
+    border-radius: 5px;
+}
+
+.details-section{
+    background-color: var(--white);
+}
+
+.header{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+/* Style inputs, select elements and textareas */
+.col-75 input[type=text], .col-75 input[type=number], .col-75 textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: var(--brown);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+    float: left;
+    width: 80%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row{
+    overflow: hidden;
+}
+
+.condition{
+  background-color: white;
+  border: black solid 1px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.submission{
+    float: left;
+    margin-top: 10px;
+    padding-left: 150px;
+}
+
+.btn{
+  background-color: #4CAF50;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+.register{
+  padding: 14px 28px;
+  margin-left: 20px;
+}
+.clear{
+  padding: 14px 40px;
+}

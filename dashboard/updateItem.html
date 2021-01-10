@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Product Description</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
+                <h1 class="main-title">ExpressEat Dashboard</h1>
+            </div>
+            <div class="navigation-bar">
+                <nav>
+                    <ul>
+                        <li><a href="dashboard.php">Home</a></li>
+                        <li><a href="userAccount.php">User Account</a></li>
+                        <li class="current"><a href="product.php">Product</a></li>
+                        <li><a href="transaction.php">Transaction</a></li>
+                    </ul>
+               </nav>
+               <div class="dropdown">
+                <div class="container-hamburger-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> 
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a>
+                    <a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a>
+                    <!-- <a href="#"><i class="fa fa-shopping-cart" style="font-size:15px; width: 20px;"></i> Cart</a> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <h1 class="list-title">UPDATE PRODUCT LIST</h1>
+        <form name="search-table" action="updateItem.php" method="post">
+            <div class="search">
+                <input type="text" class="searchTerm" name="search-data" placeholder="What are you looking for?">
+            </div>
+            <div class="filter-container">
+                <input type="radio" id="searchCode" name="search-category" value='Code' checked>
+                <input type="radio" id="searchName" name="search-category" value='Name'>
+                <ol class="filters">
+                    <li>
+                        <label for="searchCode">Code Number</label>
+                    </li>
+                    <li>
+                        <label for="searchName">Item Name</label>
+                    </li>
+                </ol>
+            </div>
+            <div class="search">
+                <input type="text" class="searchTerm" name="replace-data" placeholder="What are you looking for?">
+            </div>
+            <div class="filter-container">
+                <input type="radio" id="replaceCode" name="replace-category" value='Code' checked>
+                <input type="radio" id="replaceName" name="replace-category" value='Name'>
+                <input type="radio" id="replaceDescription" name="replace-category" value='ItemDescription'>
+                <input type="radio" id="replaceQuantity" name="replace-category" value='QtyInStock'>
+                <input type="radio" id="replacePrice" name="replace-category" value='BuyPrice'>
+                <ol class="filters">
+                    <li>
+                        <label for="replaceCode">Code Number</label>
+                    </li>
+                    <li>
+                        <label for="replaceName">Item Name</label>
+                    </li>
+                    <li>
+                        <label for="replaceDescription">Description</label>
+                    </li>
+                    <li>
+                        <label for="replaceQuantity">Item Quantity</label>
+                    </li>
+                    <li>
+                        <label for="replacePrice">Price</label>
+                    </li>
+                </ol>
+            </div>
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
