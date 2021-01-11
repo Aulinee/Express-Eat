@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Payment Page</title>
+        <link rel="stylesheet" href="payment.css">
+    </head>
+    <body>
+        <h1 class="expressEat"><p class="logo"><img src="Logo-04.png" alt="logo" width="25px"></p>ExpressEat
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </h1>
+
+        <br>
+
+        <div class="container-1">
+            <h4>Who's the order for</h4>
+            <div id="details-section">
+                <form name="registration"  method="post">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="Name"><b>Name</b></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" placeholder="Enter Name" name="Name" id="Name" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="address"><b>Address</b></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" placeholder="Enter address" name="address" id="address" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="mobile"><b>Mobile</b></label>
+                        </div>
+                        <div class="col-75">
+                            <h1 id="countrycode">+60</h1>
+                            <input type="tel" placeholder="Enter Phone Number" name="phoneNumber" id="phone" required>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container-2">
+            <h4>How would you like to pay</h4>
+                <div class="box-1">
+                    <button type="submit" class="cashbtn"><h3>Cash</h3></button>
+                </div>  
+            <br>
+                <div class="box-2">
+                    <button type="submit" class="creditbtn"><h3>Credit Card/Debit Card</h3><img src="creditdebit.jpg" alt="creditdebit" width="50px" height="20px"></button>
+                </div>
+            <br>
+                <div class="box-3">
+                    <button type="submit" class="onlinebtn"><h3>Online Banking</h3><img src="onlinebanking.jpg" alt="onlinebanking" width="50px" height="20px"></button>
+                </div>
+            <br>
+                <div class="box-4">
+                    <button type="submit" class="grabpaybtn"><h3>E-Wallet Grab Pay</h3><img src="grabpay.png" alt="grabpay" width="50px" height="20px"></button>
+                </div>
+            <br>
+                <div class="box-5">
+                    <button type="submit" class="touchngobtn"><h3>E-Wallet Touch 'n Go</h3><img src="touchngo.png" alt="touchngo" width="50px" height="20px"></button>
+                </div>
+            <br>
+                <div class="box-6">
+                    <button type="submit" class="boostbtn"><h3>E-Wallet Boost</h3><img src="boost.png" alt="boost" width="50px" height="20px"></button>
+                </div>
+                             
+        </div>
+
+        <br>
+
+        <div class="container-3">
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> I agree to the <a href="#">Terms and Condition</a>
+                and understand that my information will be used as described on this page and ExpressEat <a href="#">Privacy Policy</a>. If I choose to 
+                pay with credit or debit card, my card information will be automatically stored and secured for future payments.
+            </label>
+
+            <div>
+                <button type="submit" class="gotopaymentbtn">Go to payment</button>
+            </div>
+        </div>    
+    
+    </body>
