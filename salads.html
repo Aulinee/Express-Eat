@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Salads</title>
+        <link rel="stylesheet" href="newStyle.css">
+        <script>
+            function increment() {
+                document.getElementById('demoInput').stepUp();
+            }
+            function decrement() {
+                document.getElementById('demoInput').stepDown();
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <img class="main-logo" src="Logo-04.png" alt="logo" width="50px">
+                    <h1 class="main-title">ExpressEat</h1>
+                </div>
+                <div class="container-hamburger-icon" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> 
+                <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+               </nav>
+            </div>
+        </header>
+
+        <br>
+        
+        <div class="wrapper">
+            <div class="title">
+                <h4><span>Make your tummy happy!</span>our menu</h4>
+            </div>
+            <div class="salads">
+                <div class="salads-menu">
+                    <img src="classic.jpg" alt="Classic">
+                    <div class="salads-content">
+                        <h4>Classic Salad<span>RM6</span></h4>
+                        <input id=demoInput type=number min=0 max=110>
+                        <button onclick="increment()">Add to cart</button>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                </div>
+
+                <div class="salads-menu">
+                    <img src="chickensalad.jpg" alt="Chicken">
+                    <div class="salads-content">
+                        <h4>Chicken Salad<span>RM12</span></h4>
+                        <input id=demoInput type=number min=0 max=110>
+                        <button onclick="increment()">Add to cart</button>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                </div>
+
+                <div class="salads-menu">
+                    <img src="seafood.jpg" alt="Seafood">
+                    <div class="salads-content">
+                        <h4>Seafood Shrimp<span>RM15</span></h4>
+                        <input id=demoInput type=number min=0 max=110>
+                        <button onclick="increment()">Add to cart</button>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                </div>
+
+                <div class="salads-menu">
+                    <img src="soup.jpg" alt="Soup">
+                    <div class="drinks-content">
+                        <h4>Mushroom Soup & Garlic Bread<span>RM12</span></h4>
+                        <input id=demoInput type=number min=0 max=110>
+                        <button onclick="increment()">Add to cart</button>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="your-cart"><h2>-----Your Cart-----</h2>
+                <i><small>Your cart is empty. Help us to help you satisfy your tummy!</small></i>
+            </div>
+            <br>
+            <br>
+            <p>Your total: </p>
+            <br>
+            <p>Delivery fee(s): </p>
+            <br>
+            <p>Grant Total: </p>
+
+            <button class="button cart">Done</button>
+            <button class="button clear">Clear</button>
+
+            <div class="ads">
+                <img src="ads.jpg" alt="Advertisement" width="95%" height="95%">
+            </div>
+            
+        </div>
+    </body>
+</html>
