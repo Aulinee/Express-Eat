@@ -27,15 +27,16 @@
                     </ul>
                </nav>
                <div class="dropdown">
-                <div class="container-hamburger-icon">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div> 
-                <div class="dropdown-content">
-                    <a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a>
-                    <a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a>
-                    <!-- <a href="#"><i class="fa fa-shopping-cart" style="font-size:15px; width: 20px;"></i> Cart</a> -->
+                    <div class="container-hamburger-icon">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div> 
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a>
+                        <a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a>
+                        <!-- <a href="#"><i class="fa fa-shopping-cart" style="font-size:15px; width: 20px;"></i> Cart</a> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,6 +44,17 @@
      <!--List of transaction -->
      <section class="table-1 customer-table">
         <h1>
+            <button class="button tooltip" style="float: left; margin-left: 15px; background-color: lightgrey;">
+                <div class="dropdown-download">
+                    <i class="fa">&#xf019;</i>
+                    <div class="dropdown-content-download">
+                        <a href="transactionListAllPDF.php" target= "_blank">All</a>
+                        <a href="#">By Day</a>
+                        <a href="#">By Month</a>
+                        <a href="#">By Year</a>
+                    </div>
+                </div>
+            </button>
             List of Transaction
             <button class="button tooltip">
                 <span>
