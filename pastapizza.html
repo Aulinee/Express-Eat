@@ -4,16 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Waffle</title>
+        <title>Pasta & Pizza</title>
         <link rel="stylesheet" href="newStyle.css">
-        <script>
-            function increment() {
-                document.getElementById('demoInput').stepUp();
-            }
-            function decrement() {
-                document.getElementById('demoInput').stepDown();
-            }
-        </script>
     </head>
     <body>
         <header>
@@ -36,62 +28,72 @@
             </div>
         </header>
 
-        <br>
-        
         <div class="wrapper">
             <div class="title">
                 <h4><span>Make your tummy happy!</span>our menu</h4>
             </div>
-            <div class="waffle">
-                <div class="waffle-menu">
-                    <img src="classicwaffle.jpg" alt="Classic">
-                    <div class="waffle-content">
-                        <h4>Classic<span>RM6.00</span></h4>
-                        <p>Waffle with honey & butter.</p>
+            <div class="papiz">
+                <div class="papiz-menu">
+                    <img src="aglio olio.jpg" alt="Aglio Olio">
+                    <div class="papiz-content">
+                        <h4>Aglio Olio<span>RM13.50</span></h4>
+                        <p>Linguini tossed in olive oil. 
+                        <br>Packed with fragrant herbs, capsicums. 
+                        <br>Slightly spicy with a dash of vibrant chilli flakes.</p>
                         <input id=demoInput type=number min=0 max=110>
                         <button onclick="increment()">Add to cart</button>
                         <button onclick="decrement()">-</button>
                     </div>
                 </div>
 
-                <div class="waffle-menu">
-                    <img src="wafflesyrup.jpg" alt="Waffle">
-                    <div class="waffle-content">
-                        <h4>Belgian Waffle<span>RM8.00</span></h4>
-                        <p>Waffle with ice cream and syrup.</p>
+                <div class="papiz-menu">
+                    <img src="carbonara.jpg" alt="Carbonara">
+                    <div class="papiz-content">
+                        <h4>Carbonara<span>RM13</span></h4>
+                        <p>Spaghetti with parmesan cheese, 
+                        <br>egg yolk and cream.</p>
                         <input id=demoInput type=number min=0 max=110>
                         <button onclick="increment()">Add to cart</button>
                         <button onclick="decrement()">-</button>
                     </div>
                 </div>
 
-                <div class="waffle-menu">
-                    <img src="wafflebanana.jpg" alt="Waffle">
-                    <div class="waffle-content">
-                        <h4>Belgian Waffle<span>RM10.00</span></h4>
-                        <p>Waffle with ice cream and banana.</p>
+                <div class="papiz-menu">
+                    <img src="spaghetti bolognese.jpg" alt="Spaghetti Bolognese">
+                    <div class="papiz-content">
+                        <h4>Spaghetti Bolognese<span>RM13</span></h4>
+                        <p>Spaghetti topped with minced 
+                        <br>beef or chicken and mozzarella cheese.</p>
                         <input id=demoInput type=number min=0 max=110>
                         <button onclick="increment()">Add to cart</button>
                         <button onclick="decrement()">-</button>
                     </div>
                 </div>
 
-                <div class="waffle-menu">
-                    <img src="waffleoreo.jpg" alt="Waffle">
-                    <div class="waffle-content">
-                        <h4>Belgian Waffle<span>RM10.00</span></h4>
-                        <p>Waffle with ice cream and oreo.</p>
+                <div class="papiz-menu">
+                    <img src="PepperoninPizza.jpg" alt="Pepperoni Pizza">
+                    <div class="papiz-content">
+                        <h4>Pepperoni Pizza<span>RM20</span></h4>
                         <input id=demoInput type=number min=0 max=110>
                         <button onclick="increment()">Add to cart</button>
                         <button onclick="decrement()">-</button>
                     </div>
                 </div>
 
-                <div class="waffle-menu">
-                    <img src="wafflestrawberry.jpg" alt="Waffle">
-                    <div class="waffle-content">
-                        <h4>Belgian Waffle<span>RM10.00</span></h4>
-                        <p>Waffle with ice cream and strawberry.</p>
+                <div class="papiz-menu">
+                    <img src="hawaiian pizza.jpg" alt="Hawaiian Chicken">
+                    <div class="papiz-content">
+                        <h4>Hawaiian Chicken<span>RM20</span></h4>
+                        <input id=demoInput type=number min=0 max=110>
+                        <button onclick="increment()">Add to cart</button>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                </div>
+
+                <div class="papiz-menu">
+                    <img src="mix pizza.jpg" alt="Mix Pizza">
+                    <div class="papiz-content">
+                        <h4>Mix Pizza<span>RM32</span></h4>
                         <input id=demoInput type=number min=0 max=110>
                         <button onclick="increment()">Add to cart</button>
                         <button onclick="decrement()">-</button>
@@ -102,7 +104,7 @@
 
         <div class="sidebar">
             <div class="your-cart"><h2>-----Your Cart-----</h2>
-                <i><small>Your cart is empty. Help us to help you satisfy your tummy!</small></i>
+            <i><small>Your cart is empty. Help us to help you satisfy your tummy!</small></i>
             </div>
             <br>
             <br>
@@ -116,8 +118,8 @@
             <button class="button clear">Clear</button>
 
             <div class="ads">
-                <img src="ads.png" alt="Advertisement" width="95%" height="95%">
-            </div>    
+                <img src="pizza.png" alt="Advertisement" width="95%" height="95%">
+            </div>
         </div>
     </body>
 </html>
