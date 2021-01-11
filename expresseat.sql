@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2021 at 05:51 PM
+-- Generation Time: Jan 11, 2021 at 06:07 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -151,16 +151,6 @@ INSERT INTO `item` (`Code`, `Name`, `ItemDescription`, `QtyInStock`, `BuyPrice`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
---
-
-CREATE TABLE `menu` (
-  `ItemCode` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `order`
 --
 
@@ -237,20 +227,6 @@ CREATE TABLE `payment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `receipt`
---
-
-CREATE TABLE `receipt` (
-  `Receipt` int(10) NOT NULL,
-  `CustomerID` int(10) NOT NULL,
-  `PaymentCheckNum` varchar(255) NOT NULL,
-  `OrderID` int(10) NOT NULL,
-  `GenerateDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `review`
 --
 
@@ -279,41 +255,6 @@ INSERT INTO `shopping_cart` (`Order_ItemID`) VALUES
 (1),
 (2);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `staff`
---
-
-CREATE TABLE `staff` (
-  `ID` int(10) NOT NULL,
-  `FirstName` varchar(255) NOT NULL,
-  `LastName` varchar(255) NOT NULL,
-  `JobTitle` varchar(100) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Username` varchar(255) NOT NULL,
-  `Password` varchar(25) NOT NULL,
-  `Order_ListOrderQueue` int(10) NOT NULL,
-  `StoreCode` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `store`
---
-
-CREATE TABLE `store` (
-  `Code` int(10) NOT NULL,
-  `City` varchar(255) NOT NULL,
-  `Phone` int(11) NOT NULL,
-  `Address1` varchar(255) NOT NULL,
-  `Address2` varchar(255) NOT NULL,
-  `State` varchar(255) NOT NULL,
-  `Country` varchar(255) NOT NULL,
-  `PostalCode` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Indexes for dumped tables
 --
@@ -336,12 +277,6 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`Code`);
-
---
--- Indexes for table `menu`
---
-ALTER TABLE `menu`
-  ADD KEY `FKMenu452447` (`ItemCode`);
 
 --
 -- Indexes for table `order`
@@ -373,15 +308,6 @@ ALTER TABLE `payment`
   ADD KEY `FKPayment75777` (`CustomerID`);
 
 --
--- Indexes for table `receipt`
---
-ALTER TABLE `receipt`
-  ADD PRIMARY KEY (`Receipt`),
-  ADD KEY `FKReceipt921862` (`CustomerID`),
-  ADD KEY `FKReceipt156158` (`PaymentCheckNum`),
-  ADD KEY `FKReceipt25420` (`OrderID`);
-
---
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
@@ -393,20 +319,6 @@ ALTER TABLE `review`
 --
 ALTER TABLE `shopping_cart`
   ADD PRIMARY KEY (`Order_ItemID`);
-
---
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `FKStaff882782` (`Order_ListOrderQueue`),
-  ADD KEY `FKStaff2713` (`StoreCode`);
-
---
--- Indexes for table `store`
---
-ALTER TABLE `store`
-  ADD PRIMARY KEY (`Code`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -443,28 +355,10 @@ ALTER TABLE `order_list`
   MODIFY `OrderQueue` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `receipt`
---
-ALTER TABLE `receipt`
-  MODIFY `Receipt` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `store`
---
-ALTER TABLE `store`
-  MODIFY `Code` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -475,12 +369,6 @@ ALTER TABLE `store`
 --
 ALTER TABLE `administrator`
   ADD CONSTRAINT `FKAdministra475433` FOREIGN KEY (`StoreCode`) REFERENCES `store` (`Code`);
-
---
--- Constraints for table `menu`
---
-ALTER TABLE `menu`
-  ADD CONSTRAINT `FKMenu452447` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
 
 --
 -- Constraints for table `order`
@@ -508,14 +396,6 @@ ALTER TABLE `payment`
   ADD CONSTRAINT `FKPayment75777` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
 
 --
--- Constraints for table `receipt`
---
-ALTER TABLE `receipt`
-  ADD CONSTRAINT `FKReceipt156158` FOREIGN KEY (`PaymentCheckNum`) REFERENCES `payment` (`CheckNum`),
-  ADD CONSTRAINT `FKReceipt25420` FOREIGN KEY (`OrderID`) REFERENCES `order` (`ID`),
-  ADD CONSTRAINT `FKReceipt921862` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
-
---
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
@@ -526,13 +406,6 @@ ALTER TABLE `review`
 --
 ALTER TABLE `shopping_cart`
   ADD CONSTRAINT `FKShopping_C101954` FOREIGN KEY (`Order_ItemID`) REFERENCES `order_item` (`ID`);
-
---
--- Constraints for table `staff`
---
-ALTER TABLE `staff`
-  ADD CONSTRAINT `FKStaff2713` FOREIGN KEY (`StoreCode`) REFERENCES `store` (`Code`),
-  ADD CONSTRAINT `FKStaff882782` FOREIGN KEY (`Order_ListOrderQueue`) REFERENCES `order_list` (`OrderQueue`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
