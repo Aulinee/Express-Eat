@@ -43,15 +43,47 @@
     <section id="summary-button">
         <div class="flexbox-container-1 summary-box">
             <h1 id="total-text">Total Sales</h1>
-            <h2 id="total-sales">3333</h2>
+            <?php 
+              //To open and connect database
+              include "dbConnection.php";
+
+              $result= mysqli_query($conn,"SELECT SUM(Amount) AS totalsum FROM Payment");
+              $row = mysqli_fetch_assoc($result); 
+              $sum = $row['totalsum'];
+              echo '<h2 id="total-sales">RM '. $sum .'</h2>';
+
+              mysqli_close($conn);
+            ?>
         </div>
         <div class="flexbox-container-1 summary-box">
             <h1 id="total-text">Total User</h1>
-            <h2 id="total-user">3333</h2>
+            <?php 
+              //To open and connect database
+              include "dbConnection.php";
+
+              $result= mysqli_query($conn,"SELECT COUNT(*) AS Value FROM Customer");
+              $row = mysqli_fetch_assoc($result);
+              $sum = $row['Value'];
+            
+              echo '<h2 id="total-user">'. $sum .'</h2>';
+
+              mysqli_close($conn);
+            ?>
         </div>
         <div class="flexbox-container-1 summary-box">
-            <h1 id="total-text">Total order</h1>
-            <h2 id="total-order">3333</h2>
+            <h1 id="total-text">Total Invoice</h1>
+            <?php 
+              //To open and connect database
+              include "dbConnection.php";
+
+              $result= mysqli_query($conn, "SELECT COUNT(*) AS total FROM Payment");
+              $row = mysqli_fetch_assoc($result);
+              $sum = $row['total'];
+            
+              echo '<h2 id="total-order">'. $sum .'</h2>';
+
+              mysqli_close($conn);
+            ?>
         </div>
     </section>
     <!--List of Customer -->

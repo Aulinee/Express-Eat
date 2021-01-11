@@ -139,7 +139,7 @@ header .main-title{
     z-index: 1;
 }
   
-.dropdown-content a {
+.dropdown-content a{
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -189,7 +189,6 @@ header .main-title{
 }
 
 /*Table to display user*/
-
 .table-1 .button {
     background-color: var(--green);
     border: none;
@@ -282,8 +281,63 @@ header .main-title{
     font-size: 12px;
     color: black;
     border-bottom: solid 1px rgba(255,255,255,0.1);
+} 
+
+/*download button*/
+.button-1 {
+  background-color: var(--green);
+  border: none;
+  color: white;
+  margin: 10px 0 0 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 45px;
+  border: none;
 }
+
+.button-1:hover{
+  opacity: 0.7;
+}
+
+.dropdown-download{
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-download i{
+  font-size:20px; 
+  color: black;
+}
+
+.dropdown-content-download {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content-download a{
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content-download a:hover {
+  background-color: black;
+  opacity: 0.7;
+  border-bottom: solid 5px var(--yellow);
   
+}
+
+.dropdown-download:hover .dropdown-content-download {
+  display: block;
+}
   
   /* demo styles */
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
