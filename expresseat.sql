@@ -1,21 +1,11 @@
 -- phpMyAdmin SQL Dump
-<<<<<<< HEAD
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2021 at 05:31 PM
+-- Generation Time: Jan 11, 2021 at 05:51 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
-=======
--- version 5.0.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jan 09, 2021 at 12:34 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,11 +35,7 @@ CREATE TABLE `administrator` (
   `Username` varchar(255) NOT NULL,
   `Password` varchar(25) NOT NULL,
   `StoreCode` int(10) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -72,7 +58,6 @@ CREATE TABLE `customer` (
   `State` varchar(255) NOT NULL,
   `Country` varchar(255) NOT NULL,
   `PostalCode` int(10) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -82,43 +67,6 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`ID`, `Username`, `Email`, `Password`, `FirstName`, `LastName`, `Gender`, `Phone`, `Address1`, `Address2`, `City`, `State`, `Country`, `PostalCode`) VALUES
 (1000, 'erwinsmith', 'erwinsmith', 'erwin1014', 'Erwin', 'Smith', 'Male', 107654321, 'G Central Park Commercial Centre 317 Jln Tun Ahmad Zaidi Adruce Central Park ', '', 'Kuching', 'Sarawak', 'Malaysia', 93150),
 (1001, 'dprian', 'dprian@gmail.com', '5starCL', 'Christian', 'Yu', 'Male', 191234567, 'Lot 10 Phase Ii Sama Jaya Free Industrial Zone ', '', 'Kuching', 'Sarawak', 'Malaysia', 93450);
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
-
--- --------------------------------------------------------
-
---
--- Table structure for table `delivery`
---
-
-CREATE TABLE `delivery` (
-  `ID` int(10) NOT NULL,
-  `Order_ListOrderQueue` int(10) NOT NULL,
-  `DeliveryDate` date NOT NULL,
-  `DeliveryTime` time(6) NOT NULL,
-  `DeliveryStatus` varchar(255) NOT NULL
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `deliveryman`
---
-
-CREATE TABLE `deliveryman` (
-  `DeliveryID` int(10) NOT NULL,
-  `FirstName` varchar(255) NOT NULL,
-  `LastName` varchar(255) NOT NULL,
-  `Username` varchar(255) NOT NULL,
-  `Password` varchar(25) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Phone` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -131,7 +79,6 @@ CREATE TABLE `item` (
   `Name` varchar(255) NOT NULL,
   `ItemDescription` varchar(255) NOT NULL,
   `QtyInStock` int(10) NOT NULL,
-<<<<<<< HEAD
   `BuyPrice` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -200,10 +147,6 @@ INSERT INTO `item` (`Code`, `Name`, `ItemDescription`, `QtyInStock`, `BuyPrice`)
 (58, 'French Fries', 'Golden homemade French fries serve with sauce', 100, '7.00'),
 (59, 'Mashed Potato', 'Mashed potato with gravy', 100, '7.00'),
 (60, 'Mac n’ Cheese', 'Macaroni pasta with prawns and mushroom topped with loads of mozzarella cheese and grilled till melted', 100, '10.00');
-=======
-  `BuyPrice` decimal(19,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -229,7 +172,6 @@ CREATE TABLE `order` (
   `Shopping_CartOrder_ItemID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-<<<<<<< HEAD
 --
 -- Dumping data for table `order`
 --
@@ -238,8 +180,6 @@ INSERT INTO `order` (`ID`, `CustomerID`, `OrderTime`, `OrderDate`, `Shopping_Car
 (1, 1000, '14:00:10.795000', '2021-01-11', 1),
 (2, 1000, '14:00:10.111000', '2021-01-11', 2);
 
-=======
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 -- --------------------------------------------------------
 
 --
@@ -250,7 +190,6 @@ CREATE TABLE `order_item` (
   `ID` int(10) NOT NULL,
   `ItemCode` int(10) NOT NULL,
   `Qty` int(10) NOT NULL,
-<<<<<<< HEAD
   `PriceEach` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -261,10 +200,6 @@ CREATE TABLE `order_item` (
 INSERT INTO `order_item` (`ID`, `ItemCode`, `Qty`, `PriceEach`) VALUES
 (1, 33, 2, '10.50'),
 (2, 19, 2, '3.00');
-=======
-  `PriceEach` decimal(19,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -276,7 +211,6 @@ CREATE TABLE `order_list` (
   `OrderQueue` int(10) NOT NULL,
   `OrderID` int(10) NOT NULL,
   `OrderStatus` varchar(255) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -286,9 +220,6 @@ CREATE TABLE `order_list` (
 INSERT INTO `order_list` (`OrderQueue`, `OrderID`, `OrderStatus`) VALUES
 (1, 1, 'Booked and will be delivered on time.'),
 (2, 2, 'Booked and will be delivered on time.');
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -300,13 +231,8 @@ CREATE TABLE `payment` (
   `CheckNum` varchar(255) NOT NULL,
   `CustomerID` int(10) NOT NULL,
   `PaymentDate` date NOT NULL,
-<<<<<<< HEAD
   `Amount` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-  `Amount` decimal(19,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -320,11 +246,7 @@ CREATE TABLE `receipt` (
   `PaymentCheckNum` varchar(255) NOT NULL,
   `OrderID` int(10) NOT NULL,
   `GenerateDate` date NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -337,11 +259,7 @@ CREATE TABLE `review` (
   `CustomerID` int(10) NOT NULL,
   `Comment` varchar(1000) NOT NULL,
   `Rating` int(1) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -351,7 +269,6 @@ CREATE TABLE `review` (
 
 CREATE TABLE `shopping_cart` (
   `Order_ItemID` int(10) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -361,9 +278,6 @@ CREATE TABLE `shopping_cart` (
 INSERT INTO `shopping_cart` (`Order_ItemID`) VALUES
 (1),
 (2);
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -381,11 +295,7 @@ CREATE TABLE `staff` (
   `Password` varchar(25) NOT NULL,
   `Order_ListOrderQueue` int(10) NOT NULL,
   `StoreCode` int(10) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 -- --------------------------------------------------------
 
@@ -402,11 +312,7 @@ CREATE TABLE `store` (
   `State` varchar(255) NOT NULL,
   `Country` varchar(255) NOT NULL,
   `PostalCode` int(10) NOT NULL
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for dumped tables
@@ -417,34 +323,13 @@ CREATE TABLE `store` (
 --
 ALTER TABLE `administrator`
   ADD PRIMARY KEY (`ID`),
-<<<<<<< HEAD
   ADD KEY `FKAdministra475433` (`StoreCode`);
-=======
-  ADD KEY `FKAdmin` (`StoreCode`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `delivery`
---
-ALTER TABLE `delivery`
-  ADD PRIMARY KEY (`ID`),
-<<<<<<< HEAD
-  ADD KEY `FKDelivery790234` (`Order_ListOrderQueue`);
-=======
-  ADD KEY `FKDelivery` (`Order_ListOrderQueue`);
-
---
--- Indexes for table `deliveryman`
---
-ALTER TABLE `deliveryman`
-  ADD KEY `FKDeliveryMan` (`DeliveryID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `item`
@@ -456,81 +341,52 @@ ALTER TABLE `item`
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
-<<<<<<< HEAD
   ADD KEY `FKMenu452447` (`ItemCode`);
-=======
-  ADD KEY `FK_Menu` (`ItemCode`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
-<<<<<<< HEAD
   ADD PRIMARY KEY (`ID`),
   ADD KEY `FKOrder556711` (`CustomerID`),
   ADD KEY `FKOrder625383` (`Shopping_CartOrder_ItemID`);
-=======
-  ADD KEY `FK_Order` (`CustomerID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `order_item`
 --
 ALTER TABLE `order_item`
   ADD PRIMARY KEY (`ID`),
-<<<<<<< HEAD
   ADD KEY `FKOrder_Item307080` (`ItemCode`);
-=======
-  ADD KEY `FKOrder_Item` (`ItemCode`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `order_list`
 --
 ALTER TABLE `order_list`
-<<<<<<< HEAD
   ADD PRIMARY KEY (`OrderQueue`),
   ADD KEY `FKOrder_List286387` (`OrderID`);
-=======
-  ADD PRIMARY KEY (`OrderQueue`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`CheckNum`),
-<<<<<<< HEAD
   ADD KEY `FKPayment75777` (`CustomerID`);
-=======
-  ADD KEY `FKPayment` (`CustomerID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `receipt`
 --
 ALTER TABLE `receipt`
   ADD PRIMARY KEY (`Receipt`),
-<<<<<<< HEAD
   ADD KEY `FKReceipt921862` (`CustomerID`),
   ADD KEY `FKReceipt156158` (`PaymentCheckNum`),
   ADD KEY `FKReceipt25420` (`OrderID`);
-=======
-  ADD KEY `FKReceipt` (`CustomerID`),
-  ADD KEY `FK_Receipt_Payment` (`PaymentCheckNum`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`ID`),
-<<<<<<< HEAD
   ADD KEY `FKReview380693` (`CustomerID`);
-=======
-  ADD KEY `FKReview` (`CustomerID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `shopping_cart`
@@ -543,12 +399,8 @@ ALTER TABLE `shopping_cart`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`ID`),
-<<<<<<< HEAD
   ADD KEY `FKStaff882782` (`Order_ListOrderQueue`),
   ADD KEY `FKStaff2713` (`StoreCode`);
-=======
-  ADD KEY `FKStaff` (`Order_ListOrderQueue`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Indexes for table `store`
@@ -567,16 +419,9 @@ ALTER TABLE `administrator`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `delivery`
---
-ALTER TABLE `delivery`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-<<<<<<< HEAD
   MODIFY `Code` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
@@ -584,29 +429,18 @@ ALTER TABLE `item`
 --
 ALTER TABLE `order`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `Code` int(10) NOT NULL AUTO_INCREMENT;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-<<<<<<< HEAD
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-<<<<<<< HEAD
   MODIFY `OrderQueue` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `OrderQueue` int(10) NOT NULL AUTO_INCREMENT;
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- AUTO_INCREMENT for table `receipt`
@@ -640,54 +474,25 @@ ALTER TABLE `store`
 -- Constraints for table `administrator`
 --
 ALTER TABLE `administrator`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKAdministra475433` FOREIGN KEY (`StoreCode`) REFERENCES `store` (`Code`);
-=======
-  ADD CONSTRAINT `FKAdmin` FOREIGN KEY (`StoreCode`) REFERENCES `store` (`Code`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
-
---
--- Constraints for table `delivery`
---
-ALTER TABLE `delivery`
-<<<<<<< HEAD
-  ADD CONSTRAINT `FKDelivery790234` FOREIGN KEY (`Order_ListOrderQueue`) REFERENCES `order_list` (`OrderQueue`);
-=======
-  ADD CONSTRAINT `FKDelivery` FOREIGN KEY (`Order_ListOrderQueue`) REFERENCES `order_list` (`OrderQueue`);
-
---
--- Constraints for table `deliveryman`
---
-ALTER TABLE `deliveryman`
-  ADD CONSTRAINT `FKDeliveryMan` FOREIGN KEY (`DeliveryID`) REFERENCES `delivery` (`ID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `menu`
 --
 ALTER TABLE `menu`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKMenu452447` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
-=======
-  ADD CONSTRAINT `FK_Menu` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKOrder556711` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`),
   ADD CONSTRAINT `FKOrder625383` FOREIGN KEY (`Shopping_CartOrder_ItemID`) REFERENCES `shopping_cart` (`Order_ItemID`);
-=======
-  ADD CONSTRAINT `FK_Order` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `order_item`
 --
 ALTER TABLE `order_item`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKOrder_Item307080` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
 
 --
@@ -695,63 +500,39 @@ ALTER TABLE `order_item`
 --
 ALTER TABLE `order_list`
   ADD CONSTRAINT `FKOrder_List286387` FOREIGN KEY (`OrderID`) REFERENCES `order` (`ID`);
-=======
-  ADD CONSTRAINT `FKOrder_Item` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `payment`
 --
 ALTER TABLE `payment`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKPayment75777` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
-=======
-  ADD CONSTRAINT `FKPayment` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `receipt`
 --
 ALTER TABLE `receipt`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKReceipt156158` FOREIGN KEY (`PaymentCheckNum`) REFERENCES `payment` (`CheckNum`),
   ADD CONSTRAINT `FKReceipt25420` FOREIGN KEY (`OrderID`) REFERENCES `order` (`ID`),
   ADD CONSTRAINT `FKReceipt921862` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
-=======
-  ADD CONSTRAINT `FKReceipt` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`),
-  ADD CONSTRAINT `FK_Receipt_Payment` FOREIGN KEY (`PaymentCheckNum`) REFERENCES `payment` (`CheckNum`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKReview380693` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
-=======
-  ADD CONSTRAINT `FKReview` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKShopping_C101954` FOREIGN KEY (`Order_ItemID`) REFERENCES `order_item` (`ID`);
-=======
-  ADD CONSTRAINT `FKShopping` FOREIGN KEY (`Order_ItemID`) REFERENCES `order_item` (`ID`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 
 --
 -- Constraints for table `staff`
 --
 ALTER TABLE `staff`
-<<<<<<< HEAD
   ADD CONSTRAINT `FKStaff2713` FOREIGN KEY (`StoreCode`) REFERENCES `store` (`Code`),
   ADD CONSTRAINT `FKStaff882782` FOREIGN KEY (`Order_ListOrderQueue`) REFERENCES `order_list` (`OrderQueue`);
-=======
-  ADD CONSTRAINT `FKStaff` FOREIGN KEY (`Order_ListOrderQueue`) REFERENCES `order_list` (`OrderQueue`);
->>>>>>> bc5673a646f99104e2d86bd682f087dbb9eb11fc
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
