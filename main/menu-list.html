@@ -10,36 +10,112 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>Menu List</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
-                <h1 class="main-title">ExpressEat Menu</h1>
+    <section class="main-content bg-menu">
+        <header id="navbar">
+            <div class="container">
+                <div id="branding">
+                    <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
+                    <h1 class="main-title">ExpressEat Menu</h1>
+                </div>
+                <div class="navigation-bar-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li class="current"><a href="main-menu.html">Menu</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                   </nav>
+                   <div class="dropdown">
+                        <div class="container-hamburger-icon">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div> 
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a>
+                            <a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navigation-bar">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li class="current"><a href="#">Menu</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-               </nav>
-               <div class="dropdown">
-                <div class="container-hamburger-icon">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div> 
-                <div class="dropdown-content">
-                    <a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a>
-                    <a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a>
+        </header>
+        <div class="flexbox-container">
+            <div id="flex">
+                <a href="#drink-section">Drinks</a>
+                <a href="#cakepastry-section">Cake & Pastry</a>
+                <a href="#pastapizza-section">Pasta & Pizza</a>
+                <a href="#sidedish-section">Side Dish</a>
+            </div>
+            <div class="flex-1">
+                <div class="title-list">
+                    <h4>menu</h4>
+                </div>
+                <div class="navigate">
+                    <a href="main-menu.html"><i class='fas'>&#xf060;</i>Back To Category</a>
+                </div>
+            </div>
+            <div class="flex-2" id="drink-section">
+                <h1>Drinks</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="cakepastry-section">
+                <h1>Cake & Pastry</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="pastapizza-section">
+                <h1>Pasta & Pizza</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="sidedish-section">
+                <h1>Side Dish</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
+    <section class="sidebar-cart">
+        <h1>Hell</h1>
+    </section>
+    <script src="menu.js"></script>
 </body>
 </html>
