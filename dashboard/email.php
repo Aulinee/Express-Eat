@@ -1,60 +1,48 @@
 <?php 
- 
-// Recipient 
-$to = '72134@siswa.unimas.my'; 
- 
-// Sender 
-$from = 'audreyduyan1@gmail.com'; 
-$fromName = 'ExpressEat'; 
- 
-// Email subject 
-$subject = 'PHP Email with Attachment by CodexWorld';  
- 
-// Attachment file 
-$file = "files/codexworld.pdf"; 
- 
-// Email body content 
-$htmlContent = ' 
-    <h3>PHP Email with Attachment by CodexWorld</h3> 
-    <p>This email is sent from the PHP script with attachment.</p> 
-'; 
- 
-// Header for sender info 
-$headers = "From: $fromName"." <".$from.">"; 
- 
-// Boundary  
-$semi_rand = md5(time());  
-$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";  
- 
-// Headers for attachment  
-$headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\""; 
- 
-// Multipart boundary  
-$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" . 
-"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";  
- 
-// Preparing attachment 
-if(!empty($file) > 0){ 
-    if(is_file($file)){ 
-        $message .= "--{$mime_boundary}\n"; 
-        $fp =    @fopen($file,"rb"); 
-        $data =  @fread($fp,filesize($file)); 
- 
-        @fclose($fp); 
-        $data = chunk_split(base64_encode($data)); 
-        $message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" .  
-        "Content-Description: ".basename($file)."\n" . 
-        "Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" .  
-        "Content-Transfer-Encoding: base64\n\n" . $data . "\n\n"; 
-    } 
-} 
-$message .= "--{$mime_boundary}--"; 
-$returnpath = "-f" . $from; 
- 
-// Send email 
-$mail = @mail($to, $subject, $message, $headers, $returnpath);  
- 
-// Email sending status 
-echo $mail?"<h1>Email Sent Successfully!</h1>":"<h1>Email sending failed.</h1>"; 
- 
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\POP3;
+
+// Load Composer's autoloader
+require 'vendor/autoload.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'expresseatxoxo@gmail.com';                // SMTP username
+    $mail->Password   = 'aydyijclrrwmnzgr';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('expresseatxoxo@gmail.com', 'Mailer');
+    $mail->addAddress('audreyduyan1@gmail.com');     // Add a recipient
+    $mail->addReplyTo('audreyduyan1@gmail.com'); 
+
+
+    // Attachments
+    $mail->addAttachment('transactionList.pdf');         // Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 ?>

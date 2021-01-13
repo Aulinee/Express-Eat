@@ -1,20 +1,19 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
+    padding: 0;
+    margin: 0;
     background-image: url('bg3.jpg');
     background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
+    font-family: 'Playfair Display', sans-serif;
+    height: 100%;   
+    margin: 0px;  /*removes default style*/
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
 }
 
+/*global*/
 .container{
   margin: auto;
   width: 90%;
-  overflow: hidden;
 }
 
 .ul{
@@ -22,17 +21,71 @@ body{
   padding: 0;
 }
 
+a{
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+
+.right{
+  float:right;
+}
+
+.left{
+  float:left;
+}
+
+.main-display{
+  width: 80%;
+  flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+  overflow-y: auto;  /*adds scroll to this container*/
+  flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
+}
+
+.flexbox-1{
+  display: flex;
+}
+
+.column {
+  height: 100%;  /*allows both columns to span the full height of the browser window*/
+  display: flex;
+  flex-direction: column;  /*places the left and right headers above the bottom content*/
+}
+
+.bottom {
+  flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+  overflow-y: auto;  /*adds scroll to this container*/
+}
+
+/*Scroll bar*/
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #ffa408);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #352407);
+}
+
 /*header*/
 header{
-  background: black;
+  background-color: black;
+  width: 80%;
   color: #ffffff;
-  padding: 3px 0 3px 0;
+  padding: 3px 0 8px 0;
+  flex-shrink: 0;
 }
 
 header a{
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 500;
   transition-duration: 0.4s;
 }
 
@@ -40,14 +93,25 @@ header a:hover{
   border-bottom: #ffa200 3px solid;
 }
 
+header .current{
+  border-bottom: #ffa200 3px solid;
+  position: relative;
+}
+
 header li{
-  padding: 0 20px 10px 20px;
+  margin: 11px 20px 0px 20px;
   float: left;
   display: inline;
 }
 
 header #branding{
   float: left;
+  transition-duration: 0.4s;
+}
+
+header #branding:hover{
+  cursor: pointer;
+  color: #ffa200;
 }
 
 header #branding h1{
@@ -56,8 +120,11 @@ header #branding h1{
 }
 
 header nav{
-  float: right;
   padding: 0px 5px 0px 0px;
+}
+
+header .navigation-bar{
+  padding-left: 40%;
 }
 
 header .main-logo{
@@ -65,42 +132,56 @@ header .main-logo{
 }
 
 header .main-title{
+  font-style: italic;
   float: right;
   padding: 0px 0px 0px 10px;
 }
 
 /*Hamburger icon*/
 .container-hamburger-icon{
-  float: right;
-  margin-right: 15%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 0px 0px 20px;
 }
 
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: white;
+  background-color:  #ffa200;
   margin: 6px 0;
-  transition: 0.4s;
+  transition: 0.1s;
+}
+.bar1:hover, .bar2:hover, .bar3:hover{
+  opacity: 0.5;
 }
 
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-
-.wrapper{
-    margin:100px auto;
-    width:1200px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.dropdown-content a{
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
+
+.dropdown-content a:hover {background-color: black}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .menus{
     display:flex;
     flex-wrap:wrap;
@@ -174,8 +255,8 @@ header .main-title{
 }
 
 .wrapper{
-    width:1200px;
-    margin:100px auto;
+    width:80%;
+    margin: 0 20px;
   }
   .title{
     text-align:center;
@@ -336,20 +417,16 @@ header .main-title{
   }
 
   .sidebar {
-    height: 100%;
-    width: 260px;
+    height: auto;
+    width: auto;
+    background-color: #B47A36;
+    color: black;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
-    background-color: #B47A36;
+    right: 0;
     overflow-x: hidden;
-    padding-top: 20px;
-    margin-left: 83%;
-    padding-bottom: 10%;
-    padding-left: 1%;
-    color: black;
-
+    text-align: center;
   }
 
   .your-cart{
@@ -374,11 +451,11 @@ header .main-title{
   .cart {
     background-color: #24190B;
     margin-left: 4%;
-    margin-top: 100%;
+    margin-top: 50%;
   } 
   .clear {
     background-color: #FFA200;
-    
+    margin-bottom: 50%;
   } 
   
   .ads{

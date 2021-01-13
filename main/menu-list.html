@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Menu List</title>
+</head>
+<body>
+    <section class="main-content bg-menu">
+        <header id="navbar">
+            <div class="container">
+                <div id="branding" class="branding">
+                    <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
+                    <h1 class="main-title">ExpressEat Menu</h1>
+                </div>
+                <nav class="navigation-menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li class="current"><a href="main-menu.html">Menu</a></li>
+                        <li><a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Notification</a></li>
+                        <li><a href="#"><i class="fa fa-bell" style="font-size:15px; width: 20px;"></i> Cart</a></li>
+                        <li><a href="#"><i class="fa fa-sign-in" style="font-size:15px; width: 20px;"></i> Login</a></li>
+                    </ul>
+               </nav>
+            </div>
+        </header>
+        <div class="flexbox-container" id="top-section">
+            <div class="flex" id="flexbox">
+                <a href="#top-section">Top Of Page</a>
+                <a href="#drink-section">Drinks</a>
+                <a href="#cakepastry-section">Cake & Pastry</a>
+                <a href="#pastapizza-section">Pasta & Pizza</a>
+                <a href="#sidedish-section">Side Dish</a>
+            </div>
+            <div class="flex-1">
+                <div class="title-list">
+                    <h4>menu</h4>
+                </div>
+                <div class="navigate">
+                    <a href="main-menu.html"><i class='fas'>&#xf060;</i>Back To Category</a>
+                </div>
+            </div>
+            <div class="flex-2" id="drink-section">
+                <h1>Drinks</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="/img/Coffee/expresso.jpg" alt="Expresso">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Espresso Coffee</h2>
+                                    <h1 class="price">RM 5.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Full-flavored, concentrated form of coffee serve in shots.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement1()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment1()"><b>+</b></h1>
+                                        <input id="expresso" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="/img/Coffee/cappucino.jpg" alt="Cappuccino">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Cappuccino Coffee</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Even layer of espresso, steamed milk and foamed milk topped with brown sugar.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement2()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment2()"><b>+</b></h1>
+                                        <input id="cappuccino" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="/img/Coffee/latte.jpg" alt="Latte">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Latte Coffee</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Steamed milk with shot of espresso.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement3()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment3()"><b>+</b></h1>
+                                        <input id="latte" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="/img/Coffee/mocha.jpg" alt="Mocha">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Mocha Coffee</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Latte and premium cocoa powder with whipped cream drizzled with chocolate syrups.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement4()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment4()"><b>+</b></h1>
+                                        <input id="mocha" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Coffee/americano.jpg" alt="">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Americano Coffee</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Espresso and water.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement5()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment5()"><b>+</b></h1>
+                                        <input id="americano" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="/img/Non coffee/choc.jfif" alt="Chocolate">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Hot Chocolate Drink</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Hot milk stirred with premium cocoa powder.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement6()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment6()"><b>+</b></h1>
+                                        <input id="chocolate" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Non Coffee/green tea latte.jfif" alt="Green Tea">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Green Tea Latte</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Matcha powder with vanilla extract, milk and syrup.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement7()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment7()"><b>+</b></h1>
+                                        <input id="greentea" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Non Coffee/choc frappucino.jfif" alt="Chocolate Frappe">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Choco Frappuccino</h2>
+                                    <h1 class="price">RM 10.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Chocolate sauce, milk, mocha and ice topped with whipped cream.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement8()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment8()"><b>+</b></h1>
+                                        <input id="chocolatefrappe" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Non Coffee/peach.jfif" alt="Peach Tea">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Peach Tea</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Black tea served with homemade peach syrup.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement9()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment9()"><b>+</b></h1>
+                                        <input id="peachtea" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Non Coffee/lemon.jfif" alt="Lemon Tea">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Lemon Tea</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Black tea served with zesty lemon.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement10()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment10()"><b>+</b></h1>
+                                        <input id="lemontea" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Soft drinks/coke.jfif" alt="Coke">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Coke</h2>
+                                    <h1 class="price">RM 3.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Refreshing classic coca cola.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement11()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment11()"><b>+</b></h1>
+                                        <input id="coke" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Non Coffee/plain water.jpg" alt="Plain Water">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Plain Water</h2>
+                                    <h1 class="price">RM 2.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Plain water served with preferred temperature.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement12()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment12()"><b>+</b></h1>
+                                        <input id="plainwater" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Soft drinks/a&w.jfif" alt="A&W">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">A&W</h2>
+                                    <h1 class="price">RM 3.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Mellow and creamy taste soda.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement13()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment13()"><b>+</b></h1>
+                                        <input id="a&w" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Soft drinks/float.png" alt="Cola Float">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Soda Float</h2>
+                                    <h1 class="price">RM 4.50</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Your choice of soda with our homemade vanilla ice cream.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement14()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment14()"><b>+</b></h1>
+                                        <input id="sodafloat" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Milkshake/vanilla.jfif" alt="Vanilla Milkshake">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Vanilla Milkshake</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Ice cream with milk, whipped cream.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement15()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment15()"><b>+</b></h1>
+                                        <input id="vanillamilkshake" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Milkshake/strawberry.jfif" alt="Strawberry Milkshake">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Strawberry Milkshake</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Strawberry ice cream with milk, whipped cream and fresh strawberry.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement16()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment16()"><b>+</b></h1>
+                                        <input id="strawberrymilkshake" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Milkshake/choc milkshake.jfif" alt="Chocolate Milkshake">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Chocolate Milkshake</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Chocolate ice cream with milk, whipped cream, chocolate chips and syrup.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement17()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment17()"><b>+</b></h1>
+                                        <input id="chocolatemilkshake" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/Milkshake/oreo.jfif" alt="Oreo Milkshake">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Oreo Milkshake</h2>
+                                    <h1 class="price">RM 7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Oreo cream n` cookies ice cream with milk, whipped cream and topped with more Oreo cookies.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement18()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment18()"><b>+</b></h1>
+                                        <input id="oreomilkshake" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="cakepastry-section">
+                <h1>Cake & Pastry</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/red velvet.jpg" alt="Red Velvet">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Red Velvet Cake</h2>
+                                    <h1 class="price">RM9.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Velvety cake with mild taste of chocolate and buttermilk.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement19()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment19()"><b>+</b></h1>
+                                        <input id="redvelvet" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/dark forest.jpg" alt="Dark Forest">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Dark Forest Cake</h2>
+                                    <h1 class="price">RM10.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Chocolate cake with cherries, and whipped cream covered with chocolate shavings.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement20()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment20()"><b>+</b></h1>
+                                        <input id="darkforest" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/blueberry cheese.jpg" alt="Blueberry Cheese">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Blueberry Cheese Cake</h2>
+                                    <h1 class="price">RM10.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Cheesecake with homemade berry syrup and crushed blueberry.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement21()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment21()"><b>+</b></h1>
+                                        <input id="blueberrycheese" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/choc fudge.jfif" alt="Choc Fudge">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Chocolate Fudge Cake</h2>
+                                    <h1 class="price">RM10.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Dense chocolate cake covered with melted chocolate.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement22()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment22()"><b>+</b></h1>
+                                        <input id="chocofudge" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/matcha green tea.jpg" alt="Matcha Cake">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Matcha Cake</h2>
+                                    <h1 class="price">RM9.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Green tea cake layered cream cheese and rained with matcha powder.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement23()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment23()"><b>+</b></h1>
+                                        <input id="matcha" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/cakes/tiramisu.jpg" alt="Tiramisu">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Tiramisu</h2>
+                                    <h1 class="price">RM10.50/slice</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Ladyfinger cookies, espresso and chocolate cake with cocoa powder.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement24()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment24()"><b>+</b></h1>
+                                        <input id="tiramisu" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/cannoli.jfif" alt="Cannoli">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Cannoli</h2>
+                                    <h1 class="price">RM8.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Italian pastry filled with handmade cannoli cream.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement25()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment25()"><b>+</b></h1>
+                                        <input id="cannoli" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/churros.jpg" alt="Churros">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Churros</h2>
+                                    <h1 class="price">RM10.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Spanish styled pastry with chocolate dips.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement26()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment26()"><b>+</b></h1>
+                                        <input id="churros" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/cinnamon.jpg" alt="Cinnamon Rolls">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Cinnamon Rolls</h2>
+                                    <h1 class="price">RM7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Soft pastry made with a simple homemade dough, super fluffy and light!
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement27()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment27()"><b>+</b></h1>
+                                        <input id="cinnamon" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/curry puff.jpg" alt="Curry Puff">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Curry Puff</h2>
+                                    <h1 class="price">RM7.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Deep-fried crescent shaped pastries filled with spicy, sweet and savoury potato filling.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement28()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment28()"><b>+</b></h1>
+                                        <input id="currypuff" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/macaroon.jfif" alt="Macaron">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Macaron</h2>
+                                    <h1 class="price">RM2.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Colourful delicate, tender, sweet meringue with cream.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement29()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment29()"><b>+</b></h1>
+                                        <input id="macaron" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-menu">
+                            <div class="flex-menu-20">
+                                <img src="../img/pastries/pretzel.jpg" alt="Pretzel">
+                            </div>
+                            <div class="flex-menu-80">
+                                <div class="menu-col-30">
+                                    <h2 class="title">Classic Pretzel</h2>
+                                    <h1 class="price">RM3.00</h1>
+                                </div>
+                                <div class="menu-col-40">
+                                    <p class="description">
+                                        Soft knot shaped pastry covered with egg wash and bits of sesame.
+                                    </p>
+                                </div>
+                                <div class="menu-col-30-1">
+                                    <form name="menu" action="/orderMenu.php" method="post">
+                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                        <h1 class="toggle" onclick="decrement30()"><b>-</b></h1>
+                                        <h1 class="toggle" onclick="increment30()"><b>+</b></h1>
+                                        <input id="pretzel" type=number min=0 max=110>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="pastapizza-section">
+                <h1>Pasta & Pizza</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2" id="sidedish-section">
+                <h1>Side Dish</h1>
+                <div class="menu-all">
+                    <div class="column">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div class="column">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="menu.js"></script>
+</body>
+</html>
