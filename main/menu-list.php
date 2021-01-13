@@ -23,8 +23,8 @@
                 <nav class="navigation-menu">
                     <ul>
                         <li><a href="#"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li>
-                        <li class="current"><a href="main-menu.html"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
-                        <li><a href="#"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
+                        <li class="current"><a href="main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
+                        <li><a href="cart-mainpage.php"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
                         <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> Login</a></li>
                     </ul>
                </nav>
@@ -45,7 +45,10 @@
                     <h4>menu</h4>
                 </div>
                 <div class="navigate">
-                    <a href="main-menu.html"><i class='fas'>&#xf060;</i>Back To Category</a>
+                    <a href="main-menu.php"><i class='fas'>&#xf060;</i>Back To Category</a>
+                </div>
+                <div class="navigate-right">
+                    <a href="cart-mainpage.php">Check Shopping Cart<i class='fas'>&#xf061;</i></a>
                 </div>
             </div>
             <div class="flex-2" id="drink-section">
@@ -54,7 +57,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="/img/Coffee/expresso.jpg" alt="Expresso">
+                                <img src="../img/Coffee/expresso.jpg" alt="Expresso">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -78,7 +81,7 @@
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="/img/Coffee/cappucino.jpg" alt="Cappuccino">
+                                <img src="../img/Coffee/cappucino.jpg" alt="Cappuccino">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -102,7 +105,7 @@
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="/img/Coffee/latte.jpg" alt="Latte">
+                                <img src="../img/Coffee/latte.jpg" alt="Latte">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -126,7 +129,7 @@
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="/img/Coffee/mocha.jpg" alt="Mocha">
+                                <img src="../img/Coffee/mocha.jpg" alt="Mocha">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -174,7 +177,7 @@
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="/img/Noncoffee/choc.jfif" alt="Chocolate">
+                                <img src="../img/Noncoffee/choc.jfif" alt="Chocolate">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
