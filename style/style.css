@@ -10,6 +10,10 @@
     --brown: #b47a36;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     font: 15px Segoe UI, Helvetica, sans-serif;
     padding: 0;
@@ -47,8 +51,7 @@ a{
 header{
     background-color: black;
     color: #ffffff;
-    padding: 3px 0 3px 0;
-    position: sticky;
+    padding: 3px 0 60px 0;
 }
 
 header a{
@@ -352,15 +355,18 @@ header .main-title{
   }
   
   /* for custom scrollbar for webkit browser*/
-  
-  ::-webkit-scrollbar {
-      width: 6px;
-  } 
-  ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-  } 
-  ::-webkit-scrollbar-thumb {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  ::-webkit-scrollbar{
+    width: 12px;
+    background-color: #000000;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #ffa408);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #352407);
   }
 
   /* Search and filter */
@@ -672,7 +678,7 @@ input[type=submit] {
   }
   
 
-/*----MENU CSS------*/
+/*----MENU CATEGORY CSS------*/
 
 .bg-menu{
   height: 78%;
@@ -794,3 +800,285 @@ input[type=submit] {
   font-size: 15px;
   padding: 20px 0px;
 }
+
+/*----MENU LIST PAGE CSS------*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header .navigation-menu{
+  float: right;
+}
+
+header .branding{
+  font-size: 15px;
+}
+
+.flexbox-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.flex{
+  background-color: white;
+  padding: 10px;
+}
+
+.flex a{
+  transition: 0.4s;
+  padding: 20px;
+}
+
+.flex a:hover{
+  color: var(--yellow);
+}
+
+.flex-1{
+  border: solid 1px red;
+  padding: 0 0 40px 0;
+  width: 90%;
+  margin: auto;
+}
+
+.flex-2{
+  border: solid 1px red;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.flex-2 h1{
+  font-style: italic;
+  color: rgb(90, 85, 85);
+  font-size: 30px;
+}
+
+.main-content{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  text-align: center;
+  margin: auto;
+}
+
+/* .sidebar-cart{
+  width: 20%;
+  background-color: #d2d0cf;
+  float: left;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  text-align: center;
+} */
+
+.title-list h4{
+  text-transform:capitalize;
+  font-size:36px;
+  position:relative;
+  display:inline-block;
+  padding-bottom:10px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.title-list h4:before{
+  height: 0;
+  width: 100%;
+  position:absolute;
+  content:"";
+  width:50px;
+  height:5px;
+  background-color:#ff7720;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.navigate{
+  float: left;
+  display: inline;
+}
+
+.navigate i{
+  font-size:40px; 
+  color: rgb(133, 124, 124);
+  margin-right: 20px;
+}
+
+.navigate a{
+  font-size:30px; 
+  font-weight: 500;
+  color: rgb(133, 124, 124);
+}
+
+.navigate a:hover {
+  color: var(--light-black);
+  text-shadow:0px 0px 30px var(--light-black);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.menu-all{
+  display: flex;
+  background-color: #f1f1f1;
+  width: 80%;
+  margin: auto;
+}
+
+/* Create two equal columns that sits next to each other */
+.column{
+  border: solid 1px red;
+  color: white;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  font-size: 30px;
+  height: 100%;
+}
+
+.menu-footer-1{
+  background-color: #24190b;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  bottom: 0;
+  width: 80%;
+  text-align: center;
+}
+
+/*Menu item design using flexbox*/
+
+.flex-menu{
+  border: solid 1px rgb(187, 255, 0);
+  padding: 10px;
+  height: 16.4%;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-menu-20{
+  border: solid 1px red;
+  width: 20%;
+}
+
+.flex-menu-20 img{
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+}
+
+.flex-menu-80{
+  border: solid 1px red;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.menu-col-30{
+  border: solid 1px rgb(9, 255, 0);
+  width: auto;
+  height: 30%;
+  object-fit: cover;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--light-black);
+}
+
+.menu-col-30 .title{
+  color: #000000;
+  font-size: 20px;
+  float: left;
+  letter-spacing: 3px;
+}
+
+.menu-col-30 .price{
+  font-size: 20px;
+  float: right;
+  color: var(--brown);
+}
+
+.menu-col-30-1{
+  border: solid 1px rgb(9, 255, 0);
+  width: auto;
+  height: 26%;
+  padding: 0 20px;
+}
+
+.menu-col-30-1 input{
+  float: right;
+  border-radius: 10px;
+  border: solid 1px var(--brown);
+  text-align: center;
+  height: 98%;
+  margin-right: 10px;
+  padding: 5px 10px 4px 10px;
+}
+
+.menu-col-30-1 h1{
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+  float: right;
+  background-color:var(--brown);
+  border-radius: 25px;
+  border: none;
+  color: #000000;
+  font-style: normal;
+  transition: 00.4s;
+}
+
+.menu-col-30-1 .cart{
+  margin-left: 10px;
+  float: right;
+  background-color:var(--green);
+  padding: 5px 10px 4px 10px;
+  border-radius: 25px;
+  border: none;
+  transition: 00.4s;
+}
+
+.menu-col-30-1 button:hover{
+  background-color: #fcf5ea;
+  border: solid 1px var(--green);
+}
+
+.menu-col-30-1 h1:hover{
+  cursor: pointer;
+  background-color: #fcf5ea;
+  border: solid 1px var(--brown);
+}
+
+.menu-col-40{
+  border: solid 1px rgb(9, 255, 0);
+  width: auto;
+  height: 35%;
+}
+
+.menu-col-40 p{
+  font-size: 15px;
+  color: #000000;
+  text-align: left;
+}
+
+@media (max-width: 1200px) {
+  .sidebar-cart{
+    display: none;
+  }
+  .main-content{
+    width: 100%;
+  }
+
+  .flex{
+    width: 100%;
+  }
+}
+
