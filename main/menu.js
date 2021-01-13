@@ -156,50 +156,66 @@ function decrement18() {
   document.getElementById('oreomilkshake').stepDown();
 }
 
-//Red Velvet
+//Sprite
 function increment19() {
-  document.getElementById('redvelvet').stepUp();
+  document.getElementById('sprite').stepUp();
 }
 function decrement19() {
+  document.getElementById('sprite').stepDown();
+}
+
+//Banana Milkshake
+function increment20() {
+  document.getElementById('bananamilkshake').stepUp();
+}
+function decrement20() {
+  document.getElementById('bananamilkshake').stepDown();
+}
+
+//Red Velvet
+function incrementcake1() {
+  document.getElementById('redvelvet').stepUp();
+}
+function decrementcake1() {
   document.getElementById('redvelvet').stepDown();
 }
 
 //Dark Forest
-function increment20() {
+function incrementcake2() {
   document.getElementById('darkforest').stepUp();
 }
-function decrement20() {
+function decrementcake2() {
   document.getElementById('darkforest').stepDown();
 }
 
 //Blueberry cheese
-function increment21() {
+function incrementcake3() {
   document.getElementById('blueberrycheese').stepUp();
 }
-function decrement21() {
+function decrementcake3() {
   document.getElementById('blueberrycheese').stepDown();
 }
 
 //Choco fudge
-function increment22() {
+function incrementcake4() {
   document.getElementById('chocofudge').stepUp();
 }
-function decrement22() {
+function decrementcake4() {
   document.getElementById('chocofudge').stepDown();
 }
 
 //Matcha
-function increment23() {
+function incrementcake5() {
   document.getElementById('matcha').stepUp();
 }
-function decrement23() {
+function decrementcake5() {
   document.getElementById('matcha').stepDown();
 }
 
 //Tiramisu
-function increment24() {
+function incrementcake6() {
   document.getElementById('tiramisu').stepUp();
 }
-function decrement24() {
+function decrementcake6() {
   document.getElementById('tiramisu').stepDown();
 }
