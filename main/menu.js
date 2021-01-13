@@ -487,4 +487,7 @@ function decrementSide8() {
   document.getElementById('mushroom').stepDown();
 }
 
+/*Sidebar*/
+
+
 
