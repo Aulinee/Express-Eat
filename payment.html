@@ -5,20 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Payment Page</title>
-        <link rel="stylesheet" href="payment.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </head>
     <body>
-        <h1 class="expressEat"><p class="logo"><img src="Logo-04.png" alt="logo" width="25px"></p>ExpressEat
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </h1>
-
-        <br>
-
+        <header id="navbar" class="padding-1">
+            <div class="container">
+                <div id="branding" class="branding">
+                    <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
+                    <h1 class="main-title">ExpressEat Menu</h1>
+                </div>
+                <nav class="navigation-menu">
+                    <ul>
+                        <li><a href="#"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li>
+                        <li class="current"><a href="main-menu.html"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
+                        <li><a href="#"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
+                        <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> Login</a></li>
+                    </ul>
+               </nav>
+            </div>
+        </header>
         <div class="container-1">
             <h4>Who's the order for</h4>
             <div id="details-section">
@@ -54,9 +64,7 @@
                 </form>
             </div>
         </div>
-
         <br>
-
         <div class="container-2">
             <h4>How would you like to pay</h4>
                 <div class="box-1">
@@ -64,39 +72,35 @@
                 </div>  
             <br>
                 <div class="box-2">
-                    <button type="submit" class="creditbtn"><h3>Credit Card/Debit Card</h3><img src="creditdebit.jpg" alt="creditdebit" width="50px" height="20px"></button>
+                    <button type="submit" class="creditbtn"><h3>Credit Card/Debit Card</h3><img src="/img/payment/creditdebit.jpg" alt="creditdebit" width="50px" height="20px"></button>
                 </div>
             <br>
                 <div class="box-3">
-                    <button type="submit" class="onlinebtn"><h3>Online Banking</h3><img src="onlinebanking.jpg" alt="onlinebanking" width="50px" height="20px"></button>
+                    <button type="submit" class="onlinebtn"><h3>Online Banking</h3><img src="/img/payment/onlinebanking.jpg" alt="onlinebanking" width="50px" height="20px"></button>
                 </div>
             <br>
                 <div class="box-4">
-                    <button type="submit" class="grabpaybtn"><h3>E-Wallet Grab Pay</h3><img src="grabpay.png" alt="grabpay" width="50px" height="20px"></button>
+                    <button type="submit" class="grabpaybtn"><h3>E-Wallet Grab Pay</h3><img src="/img/payment/grabpay.png" alt="grabpay" width="50px" height="20px"></button>
                 </div>
             <br>
                 <div class="box-5">
-                    <button type="submit" class="touchngobtn"><h3>E-Wallet Touch 'n Go</h3><img src="touchngo.png" alt="touchngo" width="50px" height="20px"></button>
+                    <button type="submit" class="touchngobtn"><h3>E-Wallet Touch 'n Go</h3><img src="/img/payment/touchngo.png" alt="touchngo" width="50px" height="20px"></button>
                 </div>
             <br>
                 <div class="box-6">
-                    <button type="submit" class="boostbtn"><h3>E-Wallet Boost</h3><img src="boost.png" alt="boost" width="50px" height="20px"></button>
+                    <button type="submit" class="boostbtn"><h3>E-Wallet Boost</h3><img src="/img/payment/boost.png" alt="boost" width="50px" height="20px"></button>
                 </div>
                              
         </div>
-
         <br>
-
         <div class="container-3">
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> I agree to the <a href="#">Terms and Condition</a>
                 and understand that my information will be used as described on this page and ExpressEat <a href="#">Privacy Policy</a>. If I choose to 
                 pay with credit or debit card, my card information will be automatically stored and secured for future payments.
             </label>
-
             <div>
                 <button type="submit" class="gotopaymentbtn">Go to payment</button>
             </div>
         </div>    
-    
     </body>

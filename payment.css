@@ -1,47 +1,4 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box
-}
 
-body{
-    background-image: url('bg3.jpg');
-    background-size: cover;
-    font-family: 'Poppins', sans-serif;
-}
-
-header{
-    text-align: center;
-    font-size: xx-large;
-    font-weight: bolder;
-}
-
-.expressEat{
-    background-color: black;
-    color: white;
-    margin-left: 2%;
-    margin-right: 2%;
-    padding-left: 7%;
-    font-size: small;
-    
-}
-
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-  
-li{
-    float: right;
-}
-  
-li a{
-    display: block;
-    padding: 8px;
-    background-color: black;
-}
 
 .container-1 {
     padding: 16px;
