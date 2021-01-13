@@ -51,7 +51,10 @@ a{
 header{
     background-color: black;
     color: #ffffff;
-    padding: 3px 0 60px 0;
+}
+
+.padding-1{
+  padding: 3px 0 60px 0;
 }
 
 header a{
