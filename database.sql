@@ -102,7 +102,7 @@ INSERT INTO `item` (`Code`, `Name`, `ItemDescription`, `QtyInStock`, `BuyPrice`)
 (13, 'Iced Green Tea Latte', 'Matcha powder with vanilla extract, milk, syrup and ice', 100, '8.00'),
 (14, 'Choco Frappuccino', '‘Chocolate sauce, milk, mocha and ice topped with whipped cream', 100, '10.00'),
 (15, 'Peach Tea', 'Black tea served with homemade peach syrup', 100, '7.00'),
-(16, 'Peach Tea', 'Black tea served with zesty lemon', 100, '7.00'),
+(16, 'Lemon Tea', 'Black tea served with zesty lemon', 100, '7.00'),
 (17, 'Plain Water', 'Plain water served with preferred temperature', 100, '2.00'),
 (18, 'Coca-Cola', 'Refreshing classic coca cola', 100, '3.00'),
 (19, 'A&W', 'Mellow and creamy taste soda', 100, '3.00'),
