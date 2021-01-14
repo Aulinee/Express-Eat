@@ -329,7 +329,7 @@ INSERT INTO `payment` (`CheckNum`, `CustomerID`, `PaymentDate`, `Amount`) VALUES
 ('P9OKzDUd0NFU4Fx6', 22, '2020-10-15', '19.00'),
 ('r0PQkuwLjpDQqibK', 44, '2020-12-20', '30.00'),
 ('RIbMOb9Ii1lBafsl', 9, '2021-01-10', '16.00'),
-('ROAgj6ubZkCyiFBa\r\n', 3, '2020-06-12', '14.00'),
+('ROAgj6ubZkCyiFBa', 3, '2020-06-12', '14.00'),
 ('sEOiaatkf1fi8wAC', 58, '2020-06-12', '16.00'),
 ('TETE9P4RALoYoj7U', 13, '2020-08-19', '9.00'),
 ('tGw4S5NANSXzcX0d', 3, '2021-01-10', '14.00'),
@@ -370,10 +370,10 @@ INSERT INTO `review` (`ID`, `CustomerID`, `Comment`, `Rating`) VALUES
 (4, 2, 'the ice cream was sooooo goood but my waffle was a bit soggy, i hope they can separate the packaging ', 4),
 (5, 40, 'I hope the pandemic is over because I would love to dine-in here with my family. The pizza was hella good', 5),
 (6, 56, 'Definitely will order here again!', 5),
-(7, 38, 'i can\'t get enough with your peach tea!!!!', 5),
-(8, 37, 'the coffee selection always hot, rich and aromatic, but the other day the taste changed a bit. perhaps different barista?', 5),
-(9, 19, 'thank you for accepting my last minute large order! such efficient and reliable also the food is just *chef\'s kiss*!', 5),
-(10, 38, 'Oh! My! God! So yummy! Everything was simply decadent. Everything I tried was bursting with flavor. This is definitely a spot I\'ll be frequenting.', 5);
+(7, 38, 'i cant get enough with your peach tea', 5),
+(8, 37, 'the coffee selection always hot, rich and aromatic, but the other day the taste changed a bit. perhaps different barista', 5),
+(9, 19, 'thank you for accepting my last minute large order! such efficient and reliable also the food is just yummy', 5),
+(10, 38, 'Oh! My! God! So yummy! Everything was simply decadent. Everything I tried was bursting with flavor. This is definitely a spot I ll be frequenting.', 5);
 
 --
 -- Indexes for dumped tables

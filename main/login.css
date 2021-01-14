@@ -4,9 +4,6 @@ body{
     font-family: 'Varela Round', sans-serif;
     background-image: url(../img/3.jpg);
     background-size: cover;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
 }
 
 /*.background {
@@ -17,58 +14,67 @@ body{
 }*/
 
 .container {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 10%;
-    left: 25%;
+    margin: 5% auto;
     width: 50%;
-    height: 600px;
+    height: auto;
     background: #ffffff;
-    margin: 0 auto;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
-
-
 .container .left {
+    display: flex;
+    flex-direction: column;
     float: left;
     width: 40%;
-    height: 600px;
     background-image: linear-gradient(#FF8A00, #ffa200);
     border-radius: 10px 0px 0px 10px;
-    
 }
 
 .container .left .word{
-    position: relative;
-    top: 0.5%;
-    left: 23%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .container .left .word p{
     font-style: italic;
     font-family: 'playfair display', serif;
     font-size: 30px; 
+    float: right;
+}
+
+.container .left img{
+    margin: 20px 0;
+    width: 60px;
+    float: left;
 }
 
 .container .left p{
-    position: absolute;
-    top: 30%;
-    left: 6%;
     font-weight: bolder;
     font-size: 60px;
     font-family: 'ubuntu', 'sans-serif';
     color: #ffffff;
     box-shadow:  0px 15px 100px 0px #00000000;
-    letter-spacing: 0px;
+}
+
+.container .word-2{
+    text-align: center;
+    height: 60%;
+}
+
+.container .left .word-2 h1{
+    font-weight: bolder;
+    font-size: 60px;
+    font-family: 'ubuntu', 'sans-serif';
+    color: #ffffff;
+    box-shadow:  0px 15px 100px 0px #00000000;
 }
 
 .container .left #sign{
-    position: absolute;
-    top: 50%;
-    left: 23%;
+    margin-top: -50px;
     font-size: large;
     color: #794f08;
 }
@@ -76,19 +82,12 @@ body{
 .container .left #newhere{
     font-size: medium;
     color: #ffffff;
-    position: absolute;
-    top: 80%;
-    left: 11%;
     font-weight: lighter;
 }
 .container .left #create{
     text-decoration: none;
     color: #ffffff;
     font-style: bold;
-    position: absolute;
-    top: 85%;
-    left: 6%;
-
 }
 
 .container .left #create a{
@@ -103,31 +102,14 @@ body{
 
 }
 
-.logo{
-    position: absolute;
-    width: 1%;
-    height: 1%;
-    top: 3%;
-    left: 3%;
-}
-
-.logo img{
-    width: 72px;
-    height: 68px;
-    float: left;
-}
-
 .container .right {
     float: right;
     width: 60%;
-    height: 600px;
-
 }
 
 .form-box {
     width: 90%;
     padding: 10px 30px;
-
 }
 
 .form-box p{
@@ -178,7 +160,6 @@ input:focus::placeholder{
     transition: all ease 0.3s;
 }
 .mode{
-    position: absolute;
     width: 90%;
     height: 100px;
     left: 32%;
@@ -186,7 +167,6 @@ input:focus::placeholder{
 
 }
 .mode h2{
-    position: absolute;
     top: 10%;
     left: 35%;
     color: #806a44;
@@ -212,18 +192,7 @@ input:focus::placeholder{
     color: #ffffff;
 }
 
-.mode #butang{
-    position: absolute;
-    top: 100%;
-    left: 28%;
-    
-}
-
 #butang button{
-    padding: 0;
-    margin: 10px;
-    width: 100px;
-    height: 50px;
     background-color: #f5edd2;
     border-radius: 12px;
     border: none;
@@ -231,8 +200,6 @@ input:focus::placeholder{
     font-weight: bolder;
     color: #352407;
     transition: all 0.2s;
-    
-    
 }
 
 #butang button:hover{
@@ -272,3 +239,18 @@ input:focus::placeholder{
 ::-webkit-scrollbar-thumb:hover{
     background: linear-gradient(transparent, #ffa408);
 }
+
+@media (max-width: 1350px) {
+    .container{
+      flex-direction: column;
+      height: auto;
+    }
+
+    .container .left{
+        display: flex;
+        flex-direction: column;
+        float:none;
+        width: 100%;
+        margin: auto;
+    }
+  }
