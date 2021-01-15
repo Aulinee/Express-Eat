@@ -12,9 +12,131 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>Register</title>
+    
+</head>
+<body id="body">
+    <div class="background">
+        <div class="container">
+            <div class="left">
+                <div class="logo">
+                    <img src="/img/Logo-04.png" alt="small-logo">
+                </div>
+                <div class="word">
+                    <p>ExpressEat</p>
+                </div>
+                <p>welcome!</p>
+                <h1 id="sign">register here</h1>
+                <h1 id="newhere">have an account?<b> sign in here!</b></h1>
+                <h3 id="create"><a href="login.html" >Sign In</a></h3>
+            </div>
+            <div class="right">
+                <div class="form-box">
+                    <h1>Create Account</h1>
+                    <hr>
+                    <form name="register" method="POST" action="registration.php">
+                        <div>
+                            <p>USERNAME</p>
+                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="usern" id="usern" placeholder="Enter username">
+                        </div>
+                        <div>
+                            <p>FIRST NAME</p>
+                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="fname" id="fnm" placeholder="Enter first name">
+                        </div>
+                        <div>
+                            <p>LAST NAME</p>
+                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="lname" id="lnm" placeholder="Enter last name">
+                        </div>
+                        <div>
+                            <p>EMAIL ADDRESS</p>
+                            <i class='fas fa-envelope-open' style='color:#ffa200'></i>  <input class="input-element" type="email" name="email" id="emailadd" placeholder="Enter email address">
+                        </div>
+                        <div>
+                            <p>PHONE NO.</p>
+                            <i class='fas fa-address-book' style='color:#ffa200'></i>  <input class="input-element" name="phone" id="hpno" placeholder="Enter phone no. exp: +60101234567">
+                        </div>
+                        <div>
+                            <p>ADDRESS LINE 1</p>
+                            <i class='fas fa-home' style='color:#ffa200'></i>  <input class="input-element" type="text" name="add-1" id="ad1" placeholder="Enter address line 1">
+                        </div>
+                        <div>
+                            <p>ADDRESS LINE 2</p>
+                            <i class='fas fa-home' style='color:#ffa200'></i>  <input class="input-element" type="text" name="add-2" id="ad2" placeholder="Enter address line 2">
+                        </div>
+                        <div>
+                            <p>POSTCODE</p>
+                            <i class='fas fa-map' style='color:#ffa200'></i>  <input class="input-element" type="number" name="post" id="pst" placeholder="Enter postcode">
+                        </div>
+                        <div>
+                            <p>CITY</p>
+                            <i class='fas fa-building' style='color:#ffa200'></i>  <input class="input-element" type="text" name="city" id="cty" placeholder="Enter city">
+                        </div>
+                        <div class="selecting">
+                            <i class='fas fa-map-marker-alt' style='color:#ffa200'></i><label for="state">STATE</label>
+                            <select name="state" id="state">
+                                <option value="">--SELECT A STATE--</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Sarawak">Sarawak</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Labuan">Labuan</option>
+                                <option value="Putrajaya">Putrajaya</option>
+                            </select>
+                            <div class="error" id="stateErr"></div>
+                        </div>
+                        <div>
+                            <p>GENDER</p>
+                            <input type="radio" id="male" name="male" value="male">
+                            <label style="color: rgb(252, 162, 0); font-size: 20px;" for="male">Male</label>
+                            <input type="radio" id="female" name="female" value="female">
+                            <label style="color: rgb(252, 162, 0); font-size: 20px;" for="female">Female</label><br>  
+                        </div>
+                        <div>
+                            <p>PASSWORD</p>
+                            <i class='fas fa-unlock-alt' style="color: #ffa200;"></i>  <input class="input-element" type="password" name="passw" id="psw" placeholder="Enter password">
+                        </div>
+                        <div>
+                            <p>RETYPE PASSWORD</p>
+                            <i class='fas fa-unlock-alt' style="color: #ffa200;"></i>  <input class="input-element" type="password" name="cpassw" id="cpsw" placeholder="Re-enter password">
+                        </div>
+                        <div class="error" id="passwordErr"></div>
+                        <div class="keep">
+                            <input type="checkbox" name="terms" id="terms" value="terms">
+                            <label for="terms">I agree to the Terms of Use and understand that my information will be used as described on this page and the ExpressEat Café Privacy Policy</label>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="mode">
+                            <h2>Register as:</h2>
+                            <div id="butang">
+                                <button type="submit" onclick="return registration()">ADMIN</button><button type="submit" onclick="return registration()">CUSTOMER</button>
+                                &nbsp;
+                                <input  id="butang" type="reset" value="Clear Form" onclick="clearFunc()" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="success-message">
+            <img src="icon-tick.png" alt="icon" width="300px">
+            <h2 style="font-size: large; color: #000000;">You have successfully registered. Please Login</h2>
+            <input id="butang" type="submit" value="Back To Home" onclick="return backToRegister()">
+          </div> -->
+    </div>
     <script>
         function registration()
         {
+                 
             var uname= document.getElementById("usern").value;
             var fname= document.getElementById("fnm").value;
             var lname= document.getElementById("lnm").value;
@@ -25,7 +147,10 @@
             var postc= document.getElementById("pst").value;
             var city= document.getElementById("cty").value;
             var state1= document.getElementById("state").value;
-            var bday= document.getElementById("bdaydate").value;
+            // var genderM= document.getElementByName("male").value;
+            // var genderF= document.getElementByName("female").value; 
+            var genM= document.forms["register"]["male"].value;
+            var genM= document.forms["register"]["female"].value;
             var pwd= document.getElementById("psw").value;			
             var cpwd= document.getElementById("cpsw").value;
             var termcon= document.getElementById("terms").checked;
@@ -119,9 +244,9 @@
                 alert("Please select your state");
                 return false;
             }
-            else if(bday=='')
+            else if(document.forms["register"]["male"].checked==false && document.forms["register"]["female"].checked==false)
             {
-                alert("Please enter your birthdate");
+                alert("You must select male or female");
                 return false;
             }
             else if(pwd=='')
@@ -155,8 +280,8 @@
                 // registerPage.style.display = 'none';
                 // successPage.style.visibility = 'visible';
                 // return false;
-                location.pathname= "login.html";
-                return false;
+                // location.pathname= "login.html";
+                // return false;
 
             }
 
@@ -176,128 +301,10 @@
             document.getElementById("state").value="";
             document.getElementById("psw").value="";			
             document.getElementById("cpsw").value="";
-            document.getElementById("bdaydate").value="";
             document.getElementById("terms").checked="";
         }
 
 
     </script>
-</head>
-<body id="body">
-    <div class="background">
-        <div class="container">
-            <div class="left">
-                <div class="logo">
-                    <img src="Bg/Logo-04.png" alt="small-logo">
-                </div>
-                <div class="word">
-                    <p>ExpressEat</p>
-                </div>
-                <p>welcome!</p>
-                <h1 id="sign">register here</h1>
-                <h1 id="newhere">have an account?<b> sign in here!</b></h1>
-                <h3 id="create"><a href="login.html" >Sign In</a></h3>
-            </div>
-            <div class="right">
-                <div class="form-box">
-                    <h1>Create Account</h1>
-                    <hr>
-                    <form name="register" method="POST" action="">
-                        <div>
-                            <p>USERNAME</p>
-                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="usern" id="usern" placeholder="Enter username">
-                        </div>
-                        <div>
-                            <p>FIRST NAME</p>
-                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="fname" id="fnm" placeholder="Enter first name">
-                        </div>
-                        <div>
-                            <p>LAST NAME</p>
-                            <i class='fas fa-user-alt' style="color: #ffa200;"></i>  <input class="input-element" type="text" name="lname" id="lnm" placeholder="Enter last name">
-                        </div>
-                        <div>
-                            <p>EMAIL ADDRESS</p>
-                            <i class='fas fa-envelope-open' style='color:#ffa200'></i>  <input class="input-element" type="email" name="email" id="emailadd" placeholder="Enter email address">
-                        </div>
-                        <div>
-                            <p>PHONE NO.</p>
-                            <i class='fas fa-address-book' style='color:#ffa200'></i>  <input class="input-element" name="phone" id="hpno" placeholder="Enter phone no. exp: +60101234567">
-                        </div>
-                        <div>
-                            <p>ADDRESS LINE 1</p>
-                            <i class='fas fa-home' style='color:#ffa200'></i>  <input class="input-element" type="text" name="add-1" id="ad1" placeholder="Enter address line 1">
-                        </div>
-                        <div>
-                            <p>ADDRESS LINE 2</p>
-                            <i class='fas fa-home' style='color:#ffa200'></i>  <input class="input-element" type="text" name="add-2" id="ad2" placeholder="Enter address line 2">
-                        </div>
-                        <div>
-                            <p>POSTCODE</p>
-                            <i class='fas fa-map' style='color:#ffa200'></i>  <input class="input-element" type="number" name="post" id="pst" placeholder="Enter postcode">
-                        </div>
-                        <div>
-                            <p>CITY</p>
-                            <i class='fas fa-building' style='color:#ffa200'></i>  <input class="input-element" type="text" name="city" id="cty" placeholder="Enter city">
-                        </div>
-                        <div class="selecting">
-                            <i class='fas fa-map-marker-alt' style='color:#ffa200'></i><label for="state">STATE</label>
-                            <select name="state" id="state">
-                                <option value="">--SELECT A STATE--</option>
-                                <option value="Melaka">Melaka</option>
-                                <option value="Terengganu">Terengganu</option>
-                                <option value="Selangor">Selangor</option>
-                                <option value="Sarawak">Sarawak</option>
-                                <option value="Sabah">Sabah</option>
-                                <option value="Perlis">Perlis</option>
-                                <option value="Perak">Perak</option>
-                                <option value="Pahang">Pahang</option>
-                                <option value="Negeri Sembilan">Negeri Sembilan</option>
-                                <option value="Kelantan">Kelantan</option>
-                                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                                <option value="Pulau Pinang">Pulau Pinang</option>
-                                <option value="Kedah">Kedah</option>
-                                <option value="Johor">Johor</option>
-                                <option value="Labuan">Labuan</option>
-                                <option value="Putrajaya">Putrajaya</option>
-                            </select>
-                            <div class="error" id="stateErr"></div>
-                        </div>
-                        <div>
-                            <p>BIRTHDAY</p>
-                            <i class='fas fa-calendar-alt' style='color: #ffa200;'></i>  <input class="input-element" type="date" name="bday" id="bdaydate" placeholder="Enter birthday date">
-                        </div>
-                        <div>
-                            <p>PASSWORD</p>
-                            <i class='fas fa-unlock-alt' style="color: #ffa200;"></i>  <input class="input-element" type="password" name="passw" id="psw" placeholder="Enter password">
-                        </div>
-                        <div>
-                            <p>RETYPE PASSWORD</p>
-                            <i class='fas fa-unlock-alt' style="color: #ffa200;"></i>  <input class="input-element" type="password" name="cpassw" id="cpsw" placeholder="Re-enter password">
-                        </div>
-                        <div class="error" id="passwordErr"></div>
-                        <div class="keep">
-                            <input type="checkbox" name="terms" id="terms" value="terms">
-                            <label for="terms">I agree to the Terms of Use and understand that my information will be used as described on this page and the ExpressEat Café Privacy Policy</label>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="mode">
-                            <h2>Register as:</h2>
-                            <div id="butang">
-                                <button type="submit" onclick="return registration()">ADMIN</button><button type="submit" onclick="return registration()">CUSTOMER</button>
-                                &nbsp;
-                                <input  id="butang" type="reset" value="Clear Form" onclick="clearFunc()" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- <div id="success-message">
-            <img src="icon-tick.png" alt="icon" width="300px">
-            <h2 style="font-size: large; color: #000000;">You have successfully registered. Please Login</h2>
-            <input id="butang" type="submit" value="Back To Home" onclick="return backToRegister()">
-          </div> -->
-    </div>
 </body>
 </html>
