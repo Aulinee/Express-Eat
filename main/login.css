@@ -22,21 +22,25 @@ body{
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+
 }
 
 .container .left {
     display: flex;
     flex-direction: column;
     float: left;
+    height: 400px;
     width: 40%;
     background-image: linear-gradient(#FF8A00, #ffa200);
     border-radius: 10px 0px 0px 10px;
+
 }
 
 .container .left .word{
     margin: auto;
     display: flex;
     flex-direction: row;
+
 }
 
 .container .left .word p{
@@ -44,6 +48,8 @@ body{
     font-family: 'playfair display', serif;
     font-size: 30px; 
     float: right;
+
+
 }
 
 .container .left img{
@@ -58,11 +64,13 @@ body{
     font-family: 'ubuntu', 'sans-serif';
     color: #ffffff;
     box-shadow:  0px 15px 100px 0px #00000000;
+    
 }
 
 .container .word-2{
     text-align: center;
     height: 60%;
+
 }
 
 .container .left .word-2 h1{
@@ -240,6 +248,7 @@ input:focus::placeholder{
     background: linear-gradient(transparent, #ffa408);
 }
 
+
 @media (max-width: 1350px) {
     .container{
       flex-direction: column;
@@ -254,3 +263,61 @@ input:focus::placeholder{
         margin: auto;
     }
   }
+
+  .row-log-1{
+    display: flexbox;
+    margin-left: 10%;
+}
+
+.row-log{
+    display: flex;
+    
+}
+
+.row-log h2{
+    margin-left: 31%;
+    
+}
+
+.col-log{
+    flex: 40%;
+    margin-top: 7%;
+}
+
+.col-log-1{
+    flex: 100%;
+}
+
+.butang-log{
+    margin-top: 10%;
+    margin-left: 10%;
+    padding: 18px 30px;
+    background-color: rgb(255, 234, 206);
+    border: none;
+    border-radius: 10px;
+}
+
+.butang-log a{
+    text-decoration: none;
+}
+
+.butang-log a{
+    text-decoration: none;
+    color: rgb(75, 38, 38);
+    font: 'varela round';
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.butang-log a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.butang-log:hover{
+    
+    background-color: tomato;
+    transform: scale(1.2);
+    transition: ease-in 0.2s;
+    
+
+}
