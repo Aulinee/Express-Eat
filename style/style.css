@@ -107,6 +107,11 @@ header .main-logo{
     float: left;
 }
 
+header .main-logo:hover{
+  transform: scale(1.2);
+  transition: ease-in-out 0.5s;
+}
+
 header .main-title{
     font-style: italic;
     float: right;
@@ -1353,3 +1358,298 @@ header .branding{
 [value="boost"]:checked ~ .box-6 [for="boost-method"]{
   border: solid 1px black;
 }
+
+/*--CSS for Main Page--*/
+.main-flex{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#main-flexbox{
+  position: sticky;
+}
+
+.main-box{
+  text-align: center;
+  color: #ff7720;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flexbox;
+}
+
+#Main-Page{
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/Background_Home.png);
+  background-size: cover;
+  background-position: bottom center;
+  display: flexbox;
+  flex-direction: column;
+}
+
+.tajuk{
+  display: flexbox;
+}
+
+.tajuk h4{
+  color: #f5eee3;
+  margin: 0 0 0 46%;
+  font-size: 30px;
+  border-bottom: 4px solid #ffa200;
+  width: fit-content;
+  display: flexbox;
+}
+
+.des-main{
+  display: flexbox;
+  flex-direction: column;
+}
+
+.des-main .des1{
+  display: flexbox;
+  width: fit-content;
+  font-family: 'ultra', 'serif';
+  margin: 20% 0 0 2%;
+  font-size: 75px;
+  color: #fcf5ea;
+  text-shadow: 2px 2px 4px #000000;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+
+.des-main .des1:hover{
+  transform: scale(1.1);
+  color: bisque;
+  transition: ease-in-out 0.2s;
+}
+
+.des-main .des2{
+  width: fit-content;
+  display: flexbox;
+  flex-direction: column;
+  color: #fcf5ea;
+  font-family: 'roboto', 'sans-serif';
+  font-size: 35px;
+  letter-spacing: 30px;
+  margin: 0 0 0 2%;
+  text-shadow: 1px 1px 3px #1b1313;
+}
+
+.des-main .des2:hover{
+  transform: scale(1.1);
+  color: bisque;
+  transition: ease-in-out 0.2s;
+}
+
+.des-main .des3{
+  width: fit-content;
+  display: flexbox;
+  flex-direction: column;
+  color: #f7aaa5;
+  font-family: 'playfair display', 'sans-serif';
+  font-size: 22px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px #352407;
+  margin: 2% 0 10% 2%;
+}
+
+.des-main .des3:hover{
+  color: #f5877f;
+  transition: ease-in-out 0.2s;
+}
+
+#About-Us{
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/about\ us-2.jpg);
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.tajuk-about{
+  display: flexbox;
+}
+
+.tajuk-about h4{
+  color: #504545;
+  margin: 0 0 0 46%;
+  font-size: 30px;
+  border-bottom: 4px solid #ffa200;
+  width: fit-content;
+  display: flexbox;
+  
+}
+
+.row-abt{
+  display: flex;
+  height: auto;
+}
+.col-abt{
+  flex: 40%;
+  flex-direction: column;
+}
+
+.about1{
+  width: fit-content;
+  flex-direction: column;
+  font-size: 33px;
+  color: #574c4c;
+  letter-spacing: 2px;
+  margin: 15% 5% 3% 5%;
+  height: auto;
+}
+
+.about1:hover{
+  color: #a87825;
+  transition: ease-in-out 0.2s;
+}
+
+.about2{
+  height: auto;
+  width: fit-content;
+  flex-direction: column;
+  margin: 0% 15% 0 15%;
+}
+
+.about2:hover{
+  transform: scale(0.95);
+  transition: ease-in-out 0.4s;
+}
+
+.col-abt img{
+  width: 700px;
+  height: 835px;
+}
+
+#Menu{
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/menu\ page\ in\ main.jpg);
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.menu-kot{
+  display: flexbox;
+}
+
+.menu-kot h4{
+  color: #fff4f4;
+  margin: 0 0 0 46%;
+  font-size: 30px;
+  border-bottom: 4px solid #ffa200;
+  width: fit-content;
+  display: flexbox;
+}
+
+.caption-menu{
+  display: flexbox;
+  margin: 1% 20% 1% 20%;
+}
+
+.caption-menu p{
+  font-size: 20px;
+  color: #e0cca8;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.kotak-menu{
+  display: flexbox;
+  width: 100%;
+  height: auto;
+  background-color: #fff4f4;
+}
+
+.col-men{
+  flex: 30%;
+}
+
+.row-men{
+  display: flex;
+}
+.bottom-menu{
+  display: inline-flex;
+  color: rgb(241, 221, 163);
+  font-size: 20px;
+  font-family: 'roboto';
+}
+.bottom-menu p{
+  padding: 40px;
+
+}
+.bottom-menu p:hover{
+  color: #ffa408;
+  transition: ease-in-out 0.2s;
+}
+#Contact-Us{
+  height: 100%;
+  width: 100%;
+  background: #24190b;
+}
+
+.tajuk-contact{
+  display: flexbox;
+}
+
+.tajuk-contact h4{
+  color: #fcf5ea;
+  margin: 0 0 0 46%;
+  font-size: 30px;
+  border-bottom: 4px solid #ffa200;
+  width: fit-content;
+  display: flexbox;
+  
+}
+
+.contact1{
+  border-right: 3px solid #fcfcfc;
+  padding-right: 10%;
+  border-left: 3px solid #fcfcfc;
+  padding-left: 10%;
+  width: fit-content;
+  flex-direction: column;
+  font-size: 33px;
+  color: #cfcfc2;
+  letter-spacing: 2px;
+  margin: 7% 15% 3% 15%;
+  height: auto;
+}
+
+.contact1:hover{
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
+
+.contact2{
+  border-left: 3px solid #fcfcfc;
+  padding-left: 10%;
+  border-right: 3px solid #fcfcfc;
+  padding-right: 10%;
+  width: fit-content;
+  flex-direction: column;
+  font-size: 33px;
+  color: #cfcfc2;
+  letter-spacing: 2px;
+  margin: 10% 22% 3% 14%;
+  height: auto;
+}
+
+.footer-main{
+  background-color: #24190b;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.footer-main h1{
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px 0px;
+}
+
