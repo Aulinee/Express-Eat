@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logo.ico" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
             <nav class="navigation-menu">
                 <ul>
                     <li class="current"><a href="index.html"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li> 
-                    <li><a href="../main/main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
+                    <li><a href="main/main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
                     <li><a href="#"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
                     <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> Login</a></li>
                 </ul>
@@ -34,7 +34,7 @@
         </div>
     </header>
     <div class="main-flex">
-        <div class="flex" id="main-flexbox">
+        <div class="flex" id="flexbox">
             <a href="#Main-Page">Main Page</a>
             <a href="#About-Us">About Us</a>
             <a href="#Menu">Menu</a>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div class="bottom-menu">
-                    <a href="main-menu.php" style="color: seashell;"><p>SEE MORE<i class='fas fa-arrow-right' style='font-size:25px;color:rgb(241, 221, 163); padding: 0 0 0 10px;'></i></p>
+                    <a href="main/main-menu.php" style="color: seashell;"><p>SEE MORE<i class='fas fa-arrow-right' style='font-size:25px;color:rgb(241, 221, 163); padding: 0 0 0 10px;'></i></p>
                     </a>
                 </div>
             </div>
@@ -160,5 +160,19 @@
             </div>
         </div>
     </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("flexbox");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+    </script>
 </body>
 </html>
