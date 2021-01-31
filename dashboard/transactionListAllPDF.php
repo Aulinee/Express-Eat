@@ -19,7 +19,7 @@
     include "dbConnection.php";
 
     // Retrieve all product record from customer Table in database
-    $SQLstring = "SELECT * FROM Payment";
+    $SQLstring = "SELECT * FROM payment";
     $result = mysqli_query($conn, $SQLstring);
 
     if($result = mysqli_query($conn, $SQLstring)){

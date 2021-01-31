@@ -1,5 +1,7 @@
 <?php 
+ob_start();
 include "dbConnection.php";
+include "sessionAdmin.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $code = $_POST['codenumber'];
@@ -9,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $price = $_POST['itemprice'];
 
     //Insert new product
-    $sql = "INSERT INTO Item (Code, Name, ItemDescription, QtyInStock, BuyPrice)
+    $sql = "INSERT INTO item (Code, Name, ItemDescription, QtyInStock, BuyPrice)
     VALUES ('$code', '$name', '$description', '$quantity', '$price');";
 
     if ($conn->query($sql) === TRUE) {
@@ -24,5 +26,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     header("Location: product.php");
     exit();
 }
-
+ob_flush_end();
 ?>

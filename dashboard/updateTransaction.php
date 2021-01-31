@@ -1,5 +1,7 @@
-<?php 
+<?php
+ob_start();
 include "dbConnection.php";
+include "sessionAdmin.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -11,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($searchCol == "CheckNum"){
         if($updateCol == "CheckNum"){
             //Update product code
-            $sql = "UPDATE Payment SET CheckNum = $updateColData WHERE CheckNum = '$searchColData'";
+            $sql = "UPDATE payment SET CheckNum = $updateColData WHERE CheckNum = '$searchColData'";
         }
         else if($updateCol == "CustomerID"){
             //Update product name
-            $sql = "UPDATE Payment SET CustomerID = '$updateColData' WHERE CheckNum = '$searchColData'";
+            $sql = "UPDATE payment SET CustomerID = '$updateColData' WHERE CheckNum = '$searchColData'";
         }
         else if($updateCol == "PaymentDate"){
             //Update product name
-            $sql = "UPDATE Payment SET PaymentDate = '$updateColData' WHERE CheckNum = '$searchColData'";
+            $sql = "UPDATE payment SET PaymentDate = '$updateColData' WHERE CheckNum = '$searchColData'";
         }
         else if($updateCol == "Amount"){
             //Update product name
-            $sql = "UPDATE Payment SET Amount = '$updateColData' WHERE CheckNum = '$searchColData'";
+            $sql = "UPDATE payment SET Amount = '$updateColData' WHERE CheckNum = '$searchColData'";
         }
     }
    
@@ -39,5 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     mysqli_close($conn);
-
+ob_flush_end();
 }

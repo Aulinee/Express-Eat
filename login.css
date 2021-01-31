@@ -2,57 +2,48 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    background-image: url(../img/3.jpg);
+    background-image: url(img/3.jpg);
     background-size: cover;
 }
-
-/*.background {
-    background-image: url(Bg/3.jpg);
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}*/
-
 .container {
     margin: 5% auto;
     width: 50%;
-    height: auto;
     background: #ffffff;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-
 }
 
 .container .left {
+    padding: 0 0 50px 0;
     display: flex;
     flex-direction: column;
-    float: left;
-    height: 400px;
+    height: auto;
     width: 40%;
     background-image: linear-gradient(#FF8A00, #ffa200);
     border-radius: 10px 0px 0px 10px;
-
 }
 
-.container .left .word{
-    margin: auto;
+.word{
+    justify-content: center;
+    width: 100%;
+    margin-bottom: auto;
     display: flex;
     flex-direction: row;
-
 }
 
-.container .left .word p{
+.word h1{
+    padding: 50px 0 0 0;
+    color: white;
     font-style: italic;
     font-family: 'playfair display', serif;
     font-size: 30px; 
     float: right;
-
-
 }
 
-.container .left img{
+.word img{
+    padding: 40px 0 0 0;
     margin: 20px 0;
     width: 60px;
     float: left;
@@ -64,16 +55,19 @@ body{
     font-family: 'ubuntu', 'sans-serif';
     color: #ffffff;
     box-shadow:  0px 15px 100px 0px #00000000;
-    
 }
 
-.container .word-2{
+.word-2{
+    display: flex;
+    flex-direction: column;
+    margin:0;
     text-align: center;
-    height: 60%;
-
+    justify-content: center;
+    width: 100%;
 }
 
-.container .left .word-2 h1{
+.word-2 #welcome{
+    margin-top: 40px;
     font-weight: bolder;
     font-size: 60px;
     font-family: 'ubuntu', 'sans-serif';
@@ -81,43 +75,50 @@ body{
     box-shadow:  0px 15px 100px 0px #00000000;
 }
 
-.container .left #sign{
-    margin-top: -50px;
+.word-2 #sign{
+    margin-top: -15px;
     font-size: large;
     color: #794f08;
 }
 
-.container .left #newhere{
+.word-2 #newhere{
+    margin-top: 0;
     font-size: medium;
     color: #ffffff;
     font-weight: lighter;
 }
-.container .left #create{
+.word-2 #create{
+    margin-top: 0;
     text-decoration: none;
     color: #ffffff;
     font-style: bold;
 }
 
-.container .left #create a{
+.word-2 #create a{
     color: white;
     text-decoration: none;
     font-size: 30px;
     transition: ease-in-out 0.5s;
 }
 
-.container .left #create a:hover{
+.word-2 #create a:hover{
     color: #794f08;
-
 }
 
 .container .right {
     float: right;
     width: 60%;
+    height: 100%;
+    padding-bottom: 50px;
 }
 
 .form-box {
-    width: 90%;
-    padding: 10px 30px;
+    margin: auto;
+    height: auto;
+}
+
+.form-box form{
+    padding: 0 20px;
 }
 
 .form-box p{
@@ -134,7 +135,7 @@ body{
 }
 
 .form-box hr {
-    width: 20px;
+    width: 100px;
     height: 5px;
     background: #ffa200;
     border: none;
@@ -142,19 +143,11 @@ body{
     margin-bottom: 50px;
 }
 
-.keep{
-    display: inline;
-    float: left;
-    margin: 20px 0px 10px 0px;
-    color: #794f08;
-}
-
 .input-element {
     border: none;
     border-bottom: 2px solid #ffa200;
     width: 90%;
-    height: 30px;
-    
+    height: 30px; 
 }
 
 input:focus{
@@ -167,20 +160,14 @@ input:focus::placeholder{
     color: transparent;
     transition: all ease 0.3s;
 }
-.mode{
-    width: 90%;
-    height: 100px;
-    left: 32%;
-    top: 55%;
 
-}
-.mode h2{
-    top: 10%;
-    left: 35%;
-    color: #806a44;
+#butang{
+    justify-content: center;
+    margin: 0;
+    display: flex;
 }
 
-.mode input{
+#butang input{
     padding: 0;
     margin: 10px;
     width: 100px;
@@ -193,7 +180,8 @@ input:focus::placeholder{
     color: #352407;
     transition: all 0.2s;
 }
-.mode input:hover{
+
+#butang input:hover{
     transform: scale(1.5);
     cursor: pointer;
     background-color: #FF8A00;
@@ -201,8 +189,12 @@ input:focus::placeholder{
 }
 
 #butang button{
-    background-color: #f5edd2;
-    border-radius: 12px;
+    padding: 0;
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(255, 234, 206);
+    border-radius: 5px;
     border: none;
     font-family: 'varela round', sans-serif;
     font-weight: bolder;
@@ -211,7 +203,7 @@ input:focus::placeholder{
 }
 
 #butang button:hover{
-    transform: scale(1.1);
+    transform: scale(1.5);
     cursor: pointer;
     background-color: #FF8A00;
     color: #ffffff;
@@ -251,8 +243,8 @@ input:focus::placeholder{
 
 @media (max-width: 1350px) {
     .container{
-      flex-direction: column;
-      height: auto;
+        flex-direction: column;
+        height: auto;
     }
 
     .container .left{
@@ -261,63 +253,12 @@ input:focus::placeholder{
         float:none;
         width: 100%;
         margin: auto;
+        height: auto;
+        border-radius: 10px 10px 0px 0px;
+        padding: 0%;
+    }
+
+    .container .right{
+        width: 100%;
     }
   }
-
-  .row-log-1{
-    display: flexbox;
-    margin-left: 10%;
-}
-
-.row-log{
-    display: flex;
-    
-}
-
-.row-log h2{
-    margin-left: 31%;
-    
-}
-
-.col-log{
-    flex: 40%;
-    margin-top: 7%;
-}
-
-.col-log-1{
-    flex: 100%;
-}
-
-.butang-log{
-    margin-top: 10%;
-    margin-left: 10%;
-    padding: 18px 30px;
-    background-color: rgb(255, 234, 206);
-    border: none;
-    border-radius: 10px;
-}
-
-.butang-log a{
-    text-decoration: none;
-}
-
-.butang-log a{
-    text-decoration: none;
-    color: rgb(75, 38, 38);
-    font: 'varela round';
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.butang-log a:hover{
-    color: rgb(255, 255, 255);
-}
-
-.butang-log:hover{
-    
-    background-color: tomato;
-    transform: scale(1.2);
-    transition: ease-in 0.2s;
-    
-
-}

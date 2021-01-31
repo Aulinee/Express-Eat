@@ -1,9 +1,9 @@
 <?php 
-//To open and connect database
 include "dbConnection.php";
+include "sessionAdmin.php";
 
 // Retrieve all product record from customer Table in database
-$SQLstring = "SELECT * FROM Item";
+$SQLstring = "SELECT * FROM item";
 $result = mysqli_query($conn, $SQLstring);
 
 if($result = mysqli_query($conn, $SQLstring)){
@@ -29,6 +29,5 @@ if($result = mysqli_query($conn, $SQLstring)){
 } else{
     echo "ERROR: Could not able to execute $SQLstring. " . mysqli_error($conn);
 }
-
 mysqli_close($conn);
 ?>

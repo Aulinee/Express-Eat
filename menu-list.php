@@ -1,10 +1,12 @@
+<?php
+   include('session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../payment.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -17,15 +19,16 @@
         <header id="navbar" class="padding-1">
             <div class="container">
                 <div id="branding" class="branding" style="font-size: 20px;">
-                    <img class="main-logo" src="../img/Logo-04.png" alt="logo" width="50px">
+                    <img class="main-logo" src="img/Logo-04.png" alt="logo" width="50px">
                     <h1 class="main-title">ExpressEat Menu</h1>
                 </div>
                 <nav class="navigation-menu">
                     <ul>
-                        <li><a href="#"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li>
+                        <li><a href="main.php"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li>
                         <li class="current"><a href="main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
                         <li><a href="cart-mainpage.php"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
-                        <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> Login</a></li>
+                        <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> <?php echo $login_session; ?></a></li>
+                        <li><a href = "logout.php">Sign Out</a></li>
                     </ul>
                </nav>
             </div>
@@ -47,8 +50,8 @@
                 <div class="navigate">
                     <a href="main-menu.php"><i class='fas'>&#xf060;</i>Back To Category</a>
                 </div>
-                <div class="navigate-right">
-                    <a href="cart-mainpage.php">Check Shopping Cart<i class='fas'>&#xf061;</i></a>
+                <div class="navigate-right" style="float: right; display: inline;">
+                    <a style="font-size:30px; font-weight: 500; color: rgb(133, 124, 124);" href="cart-mainpage.php">Check Shopping Cart<i class='fas' style="font-size:40px; color: rgb(133, 124, 124); margin-right: 20px;">&#xf061;</i></a>
                 </div>
             </div>
             <div class="flex-2" id="drink-section">
@@ -57,7 +60,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Coffee/expresso.jpg" alt="Expresso">
+                                <img src="img/Coffee/expresso.jpg" alt="Expresso">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -70,18 +73,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment1()"><b>+</b></h1>
-                                        <input id="expresso" type=number min=0 max=110>
+                                        <input id="expresso" name="expresso" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Coffee/cappucino.jpg" alt="Cappuccino">
+                                <img src="img/Coffee/cappucino.jpg" alt="Cappuccino">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -94,18 +97,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment2()"><b>+</b></h1>
-                                        <input id="cappuccino" type=number min=0 max=110>
+                                        <input id="cappuccino" name="cappuccino" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Coffee/latte.jpg" alt="Latte">
+                                <img src="img/Coffee/latte.jpg" alt="Latte">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -118,18 +121,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment3()"><b>+</b></h1>
-                                        <input id="latte" type=number min=0 max=110>
+                                        <input id="latte" name="latte" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Coffee/mocha.jpg" alt="Mocha">
+                                <img src="img/Coffee/mocha.jpg" alt="Mocha">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -142,18 +145,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement4()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment4()"><b>+</b></h1>
-                                        <input id="mocha" type=number min=0 max=110>
+                                        <input id="mocha" name="mocha" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Coffee/americano.jpg" alt="">
+                                <img src="img/Coffee/americano.jpg" alt="">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -166,18 +169,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement5()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment5()"><b>+</b></h1>
-                                        <input id="americano" type=number min=0 max=110>
+                                        <input id="americano" name="americano" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Noncoffee/choc.jfif" alt="Chocolate">
+                                <img src="img/Noncoffee/choc.jfif" alt="Chocolate">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -190,18 +193,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement6()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment6()"><b>+</b></h1>
-                                        <input id="chocolate" type=number min=0 max=110>
+                                        <input id="chocolate" name="chocolate" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/NonCoffee/matcha-latte.jpg" alt="Green Tea">
+                                <img src="img/Noncoffee/matcha-latte.jpg" alt="Green Tea">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -214,22 +217,22 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement7()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment7()"><b>+</b></h1>
-                                        <input id="greentea" type=number min=0 max=110>
+                                        <input id="greentea" name="greentea" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/NonCoffee/chocfrappucino.png" alt="Chocolate Frappe">
+                                <img src="img/Noncoffee/chocfrappucino.png" alt="Chocolate Frappe">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
-                                    <h2 class="title">Choco Frappuccino</h2>
+                                    <h2 class="title">Chocolate Frappuccino</h2>
                                     <h1 class="price">RM 10.00</h1>
                                 </div>
                                 <div class="menu-col-40">
@@ -238,18 +241,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement8()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment8()"><b>+</b></h1>
-                                        <input id="chocolatefrappe" type=number min=0 max=110>
+                                        <input id="chocolatefrappe" name="chocolatefrappe" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/NonCoffee/peachtea.png" alt="Peach Tea">
+                                <img src="img/Noncoffee/peachtea.png" alt="Peach Tea">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -262,18 +265,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement9()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment9()"><b>+</b></h1>
-                                        <input id="peachtea" type=number min=0 max=110>
+                                        <input id="peachtea" name="peachtea" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/NonCoffee/lemontea.jpg" alt="Lemon Tea">
+                                <img src="img/Noncoffee/lemontea.jpg" alt="Lemon Tea">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -286,11 +289,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement10()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment10()"><b>+</b></h1>
-                                        <input id="lemontea" type=number min=0 max=110>
+                                        <input id="lemontea" name="lemontea" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -299,7 +302,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Soft drinks/sprite.jfif" alt="Sprite">
+                                <img src="img/Soft drinks/sprite.jfif" alt="Sprite">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -312,18 +315,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement19()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment19()"><b>+</b></h1>
-                                        <input id="sprite" type=number min=0 max=110>
+                                        <input id="sprite" name="sprite" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Soft drinks/coke.jfif" alt="Coke">
+                                <img src="img/Soft drinks/coke.jfif" alt="Coke">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -336,18 +339,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement11()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment11()"><b>+</b></h1>
-                                        <input id="coke" type=number min=0 max=110>
+                                        <input id="coke" name="coke" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/NonCoffee/plainwater.jpg" alt="Plain Water">
+                                <img src="img/Noncoffee/plainwater.jpg" alt="Plain Water">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -360,18 +363,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement12()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment12()"><b>+</b></h1>
-                                        <input id="plainwater" type=number min=0 max=110>
+                                        <input id="plainwater" name="plainwater" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Soft drinks/a&w.jfif" alt="A&W">
+                                <img src="img/Soft drinks/a&w.jfif" alt="A&W">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -384,18 +387,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement13()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment13()"><b>+</b></h1>
-                                        <input id="a&w" type=number min=0 max=110>
+                                        <input id="a&w" name="a&w" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Soft drinks/float.png" alt="Cola Float">
+                                <img src="img/Soft drinks/float.png" alt="Cola Float">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -408,18 +411,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement14()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment14()"><b>+</b></h1>
-                                        <input id="sodafloat" type=number min=0 max=110>
+                                        <input id="sodafloat" name="sodafloat" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Milkshake/vanilla.jfif" alt="Vanilla Milkshake">
+                                <img src="img/Milkshake/vanilla.jfif" alt="Vanilla Milkshake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -432,18 +435,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement15()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment15()"><b>+</b></h1>
-                                        <input id="vanillamilkshake" type=number min=0 max=110>
+                                        <input id="vanillamilkshake" name="vanillamilkshake" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Milkshake/strawberry.jfif" alt="Strawberry Milkshake">
+                                <img src="img/Milkshake/strawberry.jfif" alt="Strawberry Milkshake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -456,18 +459,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement16()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment16()"><b>+</b></h1>
-                                        <input id="strawberrymilkshake" type=number min=0 max=110>
+                                        <input id="strawberrymilkshake" name="strawberrymilkshake" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Milkshake/choc milkshake.jfif" alt="Chocolate Milkshake">
+                                <img src="img/Milkshake/choc milkshake.jfif" alt="Chocolate Milkshake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -480,18 +483,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement17()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment17()"><b>+</b></h1>
-                                        <input id="chocolatemilkshake" type=number min=0 max=110>
+                                        <input id="chocolatemilkshake" name="chocolatemilkshake" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Milkshake/oreo.jfif" alt="Oreo Milkshake">
+                                <img src="img/Milkshake/oreo.jfif" alt="Oreo Milkshake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -504,18 +507,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement18()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment18()"><b>+</b></h1>
-                                        <input id="oreomilkshake" type=number min=0 max=110>
+                                        <input id="oreomilkshake" name="oreomilkshake" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Milkshake/banana milkshake.jpg" alt="Banana Milkshake">
+                                <img src="img/Milkshake/banana milkshake.jpg" alt="Banana Milkshake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -528,11 +531,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrement20()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="increment20()"><b>+</b></h1>
-                                        <input id="bananamilkshake" type=number min=0 max=110>
+                                        <input id="bananamilkshake" name="bananamilkshake" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -546,7 +549,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/red velvet.jpg" alt="Red Velvet">
+                                <img src="img/cakes/red velvet.jpg" alt="Red Velvet">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -559,18 +562,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake1()"><b>+</b></h1>
-                                        <input id="redvelvet" type=number min=0 max=110>
+                                        <input id="redvelvet" name="redvelvet" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/dark forest.jpg" alt="Dark Forest">
+                                <img src="img/cakes/dark forest.jpg" alt="Dark Forest">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -583,18 +586,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake2()"><b>+</b></h1>
-                                        <input id="darkforest" type=number min=0 max=110>
+                                        <input id="darkforest" name="darkforest" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/blueberry cheese.jpg" alt="Blueberry Cheese">
+                                <img src="img/cakes/blueberry cheese.jpg" alt="Blueberry Cheese">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -607,18 +610,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake3()"><b>+</b></h1>
-                                        <input id="blueberrycheese" type=number min=0 max=110>
+                                        <input id="blueberrycheese" name="blueberrycheese" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/choc fudge.jfif" alt="Choc Fudge">
+                                <img src="img/cakes/choc fudge.jfif" alt="Choc Fudge">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -631,18 +634,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake4()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake4()"><b>+</b></h1>
-                                        <input id="chocofudge" type=number min=0 max=110>
+                                        <input id="chocofudge" name="chocofudge" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/matcha green tea.jpg" alt="Matcha Cake">
+                                <img src="img/cakes/matcha green tea.jpg" alt="Matcha Cake">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -655,18 +658,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake5()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake5()"><b>+</b></h1>
-                                        <input id="matcha" type=number min=0 max=110>
+                                        <input id="matcha" name="matcha" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/cakes/tiramisu.jpg" alt="Tiramisu">
+                                <img src="img/cakes/tiramisu.jpg" alt="Tiramisu">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -679,11 +682,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake6()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake6()"><b>+</b></h1>
-                                        <input id="tiramisu" type=number min=0 max=110>
+                                        <input id="tiramisu" name="tiramisu" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -692,7 +695,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/cannoli.jfif" alt="Cannoli">
+                                <img src="img/pastries/cannoli.jfif" alt="Cannoli">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -705,18 +708,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake7()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake7()"><b>+</b></h1>
-                                        <input id="cannoli" type=number min=0 max=110>
+                                        <input id="cannoli" name="cannoli" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/churros.jpg" alt="Churros">
+                                <img src="img/pastries/churros.jpg" alt="Churros">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -729,18 +732,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake8()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake8()"><b>+</b></h1>
-                                        <input id="churros" type=number min=0 max=110>
+                                        <input id="churros" name="churros" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/cinnamon.jpg" alt="Cinnamon Rolls">
+                                <img src="img/pastries/cinnamon.jpg" alt="Cinnamon Rolls">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -753,18 +756,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake9()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake9()"><b>+</b></h1>
-                                        <input id="cinnamon" type=number min=0 max=110>
+                                        <input id="cinnamon" name="cinnamon" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/curry puff.jpg" alt="Curry Puff">
+                                <img src="img/pastries/curry puff.jpg" alt="Curry Puff">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -777,18 +780,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake10()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake10()"><b>+</b></h1>
-                                        <input id="currypuff" type=number min=0 max=110>
+                                        <input id="currypuff" name="currypuff" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/macaroon.jfif" alt="Macaron">
+                                <img src="img/pastries/macaroon.jfif" alt="Macaron">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -801,18 +804,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake11()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake11()"><b>+</b></h1>
-                                        <input id="macaron" type=number min=0 max=110>
+                                        <input id="macaron" name="macaron" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/pastries/pretzel.jpg" alt="Pretzel">
+                                <img src="img/pastries/pretzel.jpg" alt="Pretzel">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -825,11 +828,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementcake12()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementcake12()"><b>+</b></h1>
-                                        <input id="pretzel" type=number min=0 max=110>
+                                        <input id="pretzel" name="pretzel" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -843,7 +846,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/classic waffle.jpg" alt="Classic Waffle">
+                                <img src="img/Waffle/classic waffle.jpg" alt="Classic Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -856,18 +859,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle1()"><b>+</b></h1>
-                                        <input id="classicwaffle" type=number min=0 max=110>
+                                        <input id="classicwaffle" name="classicwaffle" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/waffle with ice cream and syrup.jpg" alt="Waffle">
+                                <img src="img/Waffle/waffle with ice cream and syrup.jpg" alt="Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -880,18 +883,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle2()"><b>+</b></h1>
-                                        <input id="wafflesyrup" type=number min=0 max=110>
+                                        <input id="wafflesyrup" name="wafflesyrup" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/Belgian waffle + Ice cream + banana.jpg" alt="Waffle">
+                                <img src="img/Waffle/Belgian waffle + Ice cream + banana.jpg" alt="Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -904,11 +907,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle3()"><b>+</b></h1>
-                                        <input id="wafflebanana" type=number min=0 max=110>
+                                        <input id="wafflebanana" name="wafflebanana" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -917,7 +920,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/Belgian waffle + Ice cream + oreo.jpg" alt="Waffle">
+                                <img src="img/Waffle/Belgian waffle + Ice cream + oreo.jpg" alt="Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -930,18 +933,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle4()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle4()"><b>+</b></h1>
-                                        <input id="waffleoreo" type=number min=0 max=110>
+                                        <input id="waffleoreo" name="waffleoreo" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/Belgian waffle + Ice cream + ostrawberry.jpg" alt="Waffle">
+                                <img src="img/Waffle/Belgian waffle + Ice cream + ostrawberry.jpg" alt="Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -954,18 +957,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle5()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle5()"><b>+</b></h1>
-                                        <input id="wafflestrawberry" type=number min=0 max=110>
+                                        <input id="wafflestrawberry" name="wafflestrawberry" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Waffle/wafflenutellaberry.jpg" alt="Waffle">
+                                <img src="img/Waffle/wafflenutellaberry.jpg" alt="Waffle">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -978,11 +981,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementWaffle6()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementWaffle6()"><b>+</b></h1>
-                                        <input id="wafflenutella" type=number min=0 max=110>
+                                        <input id="wafflenutella" name="wafflenutella" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -996,7 +999,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pasta/aglio olio.jpg" alt="Aglio Olio">
+                                <img src="img/Pasta/aglio olio.jpg" alt="Aglio Olio">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1009,18 +1012,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPasta1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPasta1()"><b>+</b></h1>
-                                        <input id="aglio" type=number min=0 max=110>
+                                        <input id="aglio" name="aglio" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pasta/carbonara.jpg" alt="Carbonara">
+                                <img src="img/Pasta/carbonara.jpg" alt="Carbonara">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1033,18 +1036,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPasta2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPasta2()"><b>+</b></h1>
-                                        <input id="carbonara" type=number min=0 max=110>
+                                        <input id="carbonara" name="carbonara" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pasta/spaghetti bolognese.jpg" alt="Spaghetti Bolognese">
+                                <img src="img/Pasta/spaghetti bolognese.jpg" alt="Spaghetti Bolognese">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1057,11 +1060,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPasta3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPasta3()"><b>+</b></h1>
-                                        <input id="bolognese" type=number min=0 max=110>
+                                        <input id="bolognese" name="bolognese" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1070,7 +1073,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pizza/PepperoninPizza.jpg" alt="Pepperoni Pizza">
+                                <img src="img/Pizza/PepperoninPizza.jpg" alt="Pepperoni Pizza">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1083,18 +1086,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPizza1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPizza1()"><b>+</b></h1>
-                                        <input id="pepperoni" type=number min=0 max=110>
+                                        <input id="pepperoni" name="pepperoni" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pizza/hawaiian pizza.jpg" alt="Hawaiian Chicken">
+                                <img src="img/Pizza/hawaiian pizza.jpg" alt="Hawaiian Chicken">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1107,18 +1110,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPizza2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPizza2()"><b>+</b></h1>
-                                        <input id="hawaiian" type=number min=0 max=110>
+                                        <input id="hawaiian" name="hawaiian" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Pizza/mix pizza.jpg" alt="Mix Pizza">
+                                <img src="img/Pizza/mix pizza.jpg" alt="Mix Pizza">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1131,11 +1134,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementPizza3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementPizza3()"><b>+</b></h1>
-                                        <input id="mix" type=number min=0 max=110>
+                                        <input id="mix" name="mix" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1149,7 +1152,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Salad/basic salad.jpg" alt="Classic Salad">
+                                <img src="img/Salad/basic salad.jpg" alt="Classic Salad">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1162,18 +1165,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSalad1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSalad1()"><b>+</b></h1>
-                                        <input id="classicsalad" type=number min=0 max=110>
+                                        <input id="classicsalad" name="classicsalad" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Salad/chicken salad.jpg" alt="Chicken Salad">
+                                <img src="img/Salad/chicken salad.jpg" alt="Chicken Salad">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1186,11 +1189,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSalad2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSalad2()"><b>+</b></h1>
-                                        <input id="chickensalad" type=number min=0 max=110>
+                                        <input id="chickensalad" name="chickensalad" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1199,7 +1202,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Salad/seafood salad.jpeg" alt="Seafood Salad">
+                                <img src="img/Salad/seafood salad.jpeg" alt="Seafood Salad">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1212,18 +1215,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSalad3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSalad3()"><b>+</b></h1>
-                                        <input id="seafoodsalad" type=number min=0 max=110>
+                                        <input id="seafoodsalad" name="seafoodsalad" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Salad/fruitsalad.jpg" alt="Fruit Salad">
+                                <img src="img/Salad/fruitsalad.jpg" alt="Fruit Salad">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1236,11 +1239,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSalad4()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSalad4()"><b>+</b></h1>
-                                        <input id="fruitsalad" type=number min=0 max=110>
+                                        <input id="fruitsalad" name="fruitsalad" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1254,7 +1257,7 @@
                     <div class="column-1">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/chicken lasagna.jfif" alt="Chicken Lasagna">
+                                <img src="img/Sides/chicken lasagna.jfif" alt="Chicken Lasagna">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1267,18 +1270,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide1()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide1()"><b>+</b></h1>
-                                        <input id="chickenlasagna" type=number min=0 max=110>
+                                        <input id="chickenlasagna" name="chickenlasagna" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/beef lasagna.jpg" alt="Beef Lasagna">
+                                <img src="img/Sides/beef lasagna.jpg" alt="Beef Lasagna">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1291,18 +1294,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide2()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide2()"><b>+</b></h1>
-                                        <input id="beeflasagna" type=number min=0 max=110>
+                                        <input id="beeflasagna" name="beeflasagna" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/chicken wing.png" alt="Chicken Wing">
+                                <img src="img/Sides/chicken wing.png" alt="Chicken Wing">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1315,18 +1318,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide3()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide3()"><b>+</b></h1>
-                                        <input id="chickenwings" type=number min=0 max=110>
+                                        <input id="chickenwings" name="chickenwings" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/sandwhich.jpg" alt="Sandwich">
+                                <img src="img/Sides/sandwhich.jpg" alt="Sandwich">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1339,11 +1342,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide4()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide4()"><b>+</b></h1>
-                                        <input id="sandwich" type=number min=0 max=110>
+                                        <input id="sandwich" name="sandwich" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1352,7 +1355,7 @@
                     <div class="column-2">
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/fries.jpg" alt="French fries">
+                                <img src="img/Sides/fries.jpg" alt="French fries">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1365,18 +1368,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide5()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide5()"><b>+</b></h1>
-                                        <input id="frenchfries" type=number min=0 max=110>
+                                        <input id="frenchfries" name="frenchfries" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/mashed potato.jpg" alt="Mashed Potato">
+                                <img src="img/Sides/mashed potato.jpg" alt="Mashed Potato">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1389,18 +1392,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide6()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide6()"><b>+</b></h1>
-                                        <input id="mashedpotato" type=number min=0 max=110>
+                                        <input id="mashedpotato" name="mashedpotato" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Sides/mac and chss.jpg" alt="Mac & Cheese">
+                                <img src="img/Sides/mac and chss.jpg" alt="Mac & Cheese">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1413,18 +1416,18 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide7()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide7()"><b>+</b></h1>
-                                        <input id="macncheese" type=number min=0 max=110>
+                                        <input id="macncheese" name="macncheese" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-menu">
                             <div class="flex-menu-20">
-                                <img src="../img/Soup/garlic soup.jpg" alt="Mushroom Soup">
+                                <img src="img/Soup/garlic soup.jpg" alt="Mushroom Soup">
                             </div>
                             <div class="flex-menu-80">
                                 <div class="menu-col-30">
@@ -1437,11 +1440,11 @@
                                     </p>
                                 </div>
                                 <div class="menu-col-30-1">
-                                    <form name="menu" action="/orderMenu.php" method="post">
-                                        <button class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
+                                    <form name="menu" action="orderMenu1.php" method="post">
+                                        <button id="addCart" class="cart" type="submit"><i style="font-size:15px" class="fa">&#xf07a;</i></button>
                                         <h1 class="toggle" onclick="decrementSide8()"><b>-</b></h1>
                                         <h1 class="toggle" onclick="incrementSide8()"><b>+</b></h1>
-                                        <input id="mushroom" type=number min=0 max=110>
+                                        <input id="mushroom" name="mushroom" type=number min=0 max=110>
                                     </form>
                                 </div>
                             </div>
@@ -1454,6 +1457,12 @@
             <h1>&copy; Copyright 2021 MeowCat Team</h1>
         </footer>
     </section>
-    <script src="menu.js"></script>
+    <script src="menu.js">
+        //Feedback
+        document.getElementById("addCart").addEventListener("click", feedback);
+        function feedback(){
+            alert("Successfully add to cart!! Redirect to your cart list");
+        }
+    </script>
 </body>
 </html>

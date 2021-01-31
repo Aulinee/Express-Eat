@@ -1,3 +1,9 @@
+//Feedback
+document.getElementById("addCart").addEventListener("click", feedback);
+function feedback(){
+  alert("Successfully add to cart!! Redirect to your cart list");
+}
+
 //Sticky navbar effect
 window.onscroll = function() {myFunction()};
 

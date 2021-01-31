@@ -1,9 +1,9 @@
 <?php 
-//To open and connect database
 include "dbConnection.php";
+include "sessionAdmin.php";
 
 // Retrieve product record from customer Table in database
-$SQLstring = "SELECT * FROM Customer";
+$SQLstring = "SELECT * FROM customer";
 $result = mysqli_query($conn, $SQLstring);
 
 if($result = mysqli_query($conn, $SQLstring)){

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2021 at 12:16 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Jan 15, 2021 at 01:49 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,8 +73,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`ID`, `Username`, `Email`, `Password`, `FirstName`, `LastName`, `Gender`, `Phone`, `Address1`, `Address2`, `City`, `State`, `Country`, `PostalCode`) VALUES
-(1, 'redscarf', 'mikasaackerman@gmail.com', 'eren1234', 'Mikasa', 'Ackerman', 'Female', 191234567, 'Lot 9A Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
-(2, 'titanlover', 'hangezoe@gmail.com', 'hz1234', 'Hange', 'Zoe', 'Female', 191234567, 'Lot 9B Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
+(1, 'redscarf', 'audreyduyan1@gmail.com', 'Er123-', 'Mikasa', 'Ackerman', 'Female', 191234567, 'Lot 9A Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
+(2, 'titanlover', 'hangezoe@gmail.com', 'Qwe!23', 'Hange', 'Zoe', 'Female', 191234567, 'Lot 9B Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
 (3, 'attacktitan', 'erenyeager@gmail.com', 'forhum4n', 'Eren', 'Yeager', 'Male', 191234567, 'Lot 11A Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
 (4, 'seirinace', 'ktaigan@gmail.com', 'basket4l', 'Kagami', 'Taiga', 'Male', 191234567, 'Lot 6C Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
 (5, 'phantom6', 'tetsukuro@gmail.com', 'kuroko', 'Kuroko', 'Tetsuya', 'Male', 191234567, 'Lot 9A Kawasan Miel Sama Jaya Industrial Zone', '', 'Kuching', 'Sarawak', 'Malaysia', 93450),
@@ -187,18 +187,18 @@ INSERT INTO `item` (`Code`, `Name`, `ItemDescription`, `QtyInStock`, `BuyPrice`)
 (28, 'Belgian waffle with Ice cream and Banana', 'Belgian waffle serve with homemade ice cream and banana', 100, '10.00'),
 (29, 'Belgian Waffle with Ice cream and Oreo', 'Belgian waffle serve with homemade ice cream and Oreo cookies', 100, '8.00'),
 (30, 'Belgian Waffle with Ice cream and Strawberry', 'Belgian waffle serve with homemade ice cream and fresh strawberry', 100, '12.00'),
-(31, 'Red Velvet Slice', 'Velvety cake with mild taste of chocolate and buttermilk', 10, '9.50'),
-(32, 'Dark Forest Slice', 'Chocolate cake with cherries, and whipped cream covered with chocolate shavings', 10, '10.50'),
-(33, 'Blueberry Cheese Slice', 'Cheesecake with homemade berry syrup and crushed blueberry', 10, '10.50'),
-(34, 'Chocolate Fudge Slice', 'Dense chocolate cake covered with melted chocolate', 10, '10.50'),
-(35, 'Matcha Slice', 'Green tea cake layered cream cheese and rained with matcha powder', 10, '9.50'),
-(36, 'Tiramisu Slice', 'Ladyfinger cookies, espresso and chocolate cake with cocoa powder', 10, '10.50'),
-(37, 'Cannoli', 'Italian pastry filled with handmade cannoli cream', 10, '3.00'),
+(31, 'Red Velvet Slice', 'Velvety cake with mild taste of chocolate and buttermilk', 100, '9.50'),
+(32, 'Dark Forest Slice', 'Chocolate cake with cherries, and whipped cream covered with chocolate shavings', 100, '10.50'),
+(33, 'Blueberry Cheese Slice', 'Cheesecake with homemade berry syrup and crushed blueberry', 100, '10.50'),
+(34, 'Chocolate Fudge Slice', 'Dense chocolate cake covered with melted chocolate', 100, '10.50'),
+(35, 'Matcha Slice', 'Green tea cake layered cream cheese and rained with matcha powder', 100, '9.50'),
+(36, 'Tiramisu Slice', 'Ladyfinger cookies, espresso and chocolate cake with cocoa powder', 100, '10.50'),
+(37, 'Cannoli', 'Italian pastry filled with handmade cannoli cream', 100, '3.00'),
 (38, 'Churros', 'Spanish styled pastry with chocolate dips', 100, '3.00'),
-(39, 'Cinnamon Roll', 'Soft pastry made with a simple homemade dough, super fluffy, sweet, spice and light', 10, '3.00'),
-(40, 'Curry Puff', 'Deep-fried crescent shaped pastries filled with spicy, sweet and savoury potato filling', 10, '3.00'),
-(41, 'Macaron', 'Colourful delicate, tender, sweet meringue with cream', 20, '1.50'),
-(42, 'Classic Pretzel', 'Soft knot shaped pastry covered with egg wash and bits of sesame', 10, '4.00'),
+(39, 'Cinnamon Roll', 'Soft pastry made with a simple homemade dough, super fluffy, sweet, spice and light', 100, '3.00'),
+(40, 'Curry Puff', 'Deep-fried crescent shaped pastries filled with spicy, sweet and savoury potato filling', 100, '3.00'),
+(41, 'Macaron', 'Colourful delicate, tender, sweet meringue with cream', 100, '1.50'),
+(42, 'Classic Pretzel', 'Soft knot shaped pastry covered with egg wash and bits of sesame', 100, '4.00'),
 (43, 'Classic House Salad', 'Creamy avocado, vibrant tomatoes, crisp cucumber, bright red onions and fresh herbs', 100, '9.00'),
 (44, 'Chicken Salad', 'A cool twist on a simple chicken salad, with poached chicken breasts, roasted red bell peppers, toasted almonds, garlic and parsley', 100, '12.00'),
 (45, 'Seafood Salad', 'Shrimp and cherry tomatoes, olives, pepperoncini and bell peppers', 100, '15.00'),
@@ -281,6 +281,19 @@ INSERT INTO `order` (`CustomerID`, `ItemCode`, `Qty`, `PriceEach`) VALUES
 (21, 51, 3, '20.00'),
 (44, 55, 2, '15.00'),
 (50, 56, 4, '15.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_list`
+--
+
+CREATE TABLE `order_list` (
+  `CustomerID` int(4) NOT NULL,
+  `ItemCode` int(11) NOT NULL,
+  `Qty` int(11) NOT NULL,
+  `TotalAmount` decimal(6,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -405,6 +418,13 @@ ALTER TABLE `order`
   ADD KEY `FKOrder511704` (`ItemCode`);
 
 --
+-- Indexes for table `order_list`
+--
+ALTER TABLE `order_list`
+  ADD KEY `FK_Order_List` (`CustomerID`),
+  ADD KEY `FK_Item_Code` (`ItemCode`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
@@ -456,6 +476,12 @@ ALTER TABLE `review`
 ALTER TABLE `order`
   ADD CONSTRAINT `FKOrder511704` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`),
   ADD CONSTRAINT `FKOrder556711` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`ID`);
+
+--
+-- Constraints for table `order_list`
+--
+ALTER TABLE `order_list`
+  ADD CONSTRAINT `FK_Item_Code` FOREIGN KEY (`ItemCode`) REFERENCES `item` (`Code`);
 
 --
 -- Constraints for table `payment`

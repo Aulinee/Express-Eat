@@ -1,5 +1,7 @@
 <?php 
+ob_start();
 include "dbConnection.php";
+include "sessionAdmin.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $paymentID = $_POST['checknum'];
@@ -8,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $amount = $_POST['amount'];
 
     //Insert new product
-    $sql = "INSERT INTO Payment (CheckNum, CustomerID, PaymentDate, Amount)
+    $sql = "INSERT INTO payment (CheckNum, CustomerID, PaymentDate, Amount)
     VALUES ('$paymentID', '$customerID', '$date', '$amount');";
 
     if ($conn->query($sql) === TRUE) {
@@ -23,5 +25,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     header("Location: transaction.php");
     exit();
 }
-
+ob_flush_end();
 ?>

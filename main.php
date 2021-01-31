@@ -1,9 +1,12 @@
+<?php
+   include('session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/logo.ico" />
+    <link rel="shortcut icon" href="/img/logo.ico" />
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,20 +18,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">  
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>ExpressEat Main Page</title>
+    <style>
+        @media (max-width: 1350px) {
+            .menu-all{
+                flex-direction: column;
+            }
+            .column-1{
+                width: auto;
+                margin: 10px;
+                border-right: none;
+            }
+
+            .column-2{
+                width: auto;
+                margin: 10px;
+                border-left: none;
+            }
+
+            .main-content{
+                width: auto;
+                position: relative;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="main-content">
     <header id="navbar" class="padding-1">
         <div class="container">
             <div id="branding" class="branding">
                 <img class="main-logo" src="img/Logo-04.png" alt="logo" width="50px">
-                <h1 class="main-title">ExpressEat</h1>
+                <h1 class="main-title">ExpressEat Menu</h1>
             </div>
             <nav class="navigation-menu">
                 <ul>
-                    <li class="current"><a href="index.html"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li> 
-                    <li><a href="main/main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
-                    <li><a href="#"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
-                    <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> Login</a></li>
+                    <li class="current"><a href="main.php"><i style="font-size:15px" class="fa">&#xf015;</i>  Home</a></li>
+                    <li><a href="main-menu.php"><i style="font-size:15px" class="fa">&#xf02d;</i>  Menu</a></li>
+                    <li><a href="cart-mainpage.php"><i style="font-size:15px" class="fa">&#xf07a;</i></i>  Cart</a></li>
+                    <li><a href="#"><i style='font-size:15px' class='fas'>&#xf406;</i> <?php echo $login_session; ?></a></li>
+                    <li><a href = "logout.php">Sign Out</a></li>
                 </ul>
            </nav>
         </div>
@@ -67,14 +94,14 @@
                     <div class="col-abt">
                         <div class="about1">
                             <p>We are here expressively <br>
-                                to bring bunch of joys to you and your belly. <br> As a fellow foodie, we want to share the comfort <br> of good food because expresseat will keep it warm, <br> keep it appetizing no matter you are!</p>
+                                to bring bunch of joys to you and your belly. <br> As a fellow foodie, we want to share the comfort <br> of good food because ExpressEat will keep it warm, <br> keep it appetizing no matter where you are!</p>
                                 <br>
                             <p><b><em>~ExpressEat Cafe</em></b></p>
                         </div>
                     </div>
                     <div class="col-abt">
                         <div class="about2">
-                            <img src="../img/dlm about us.png" alt="Milk Tea">
+                            <img src="img/dlm about us.png" alt="Milk Tea">
                         </div>
                     </div>
                 </div>
@@ -87,14 +114,14 @@
                 </div>
                 <div class="row-abt">
                     <div class="caption-menu">
-                        <p>Keep browsing and it will get your mouth watering, just a few clicks and we we will deliver it to you!</p>
+                        <p class="des3">Keep browsing and it will get your mouth watering, just a few clicks and we will deliver it to you!</p>
                     </div>
                 </div>
                 <div class="kotak-menu">
                     <div class="row-abt">
                         <div class="col-men">
                             <div class="col-abt">
-                                <img src="../img/Coffee/expresso.jpg" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
+                                <img src="img/Coffee/expresso.jpg" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
                             </div>
                             <div class="col-abt">
                                 <p style="font-size: 20px; font-weight: bold; color: rgb(238, 158, 83); border-left: 20px solid rgb(105, 208, 240); width: fit-content; margin-left: 40%;
@@ -103,7 +130,7 @@
                         </div>
                         <div class="col-men">
                             <div class="col-abt">
-                                <img src="../img/cakes/tiramisu.jpg" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
+                                <img src="img/cakes/tiramisu.jpg" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
                             </div>
                             <div class="col-abt">
                                 <p style="font-size: 20px; font-weight: bold; color: rgb(238, 158, 83); border-left: 20px solid rgb(238, 240, 105); width: fit-content; margin-left: 40%;">Tiramisu</p>
@@ -111,7 +138,7 @@
                         </div>
                         <div class="col-men">
                             <div class="col-abt">
-                                <img src="../img/pastries/cannoli.jfif" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
+                                <img src="img/pastries/cannoli.jfif" alt="" style="width: 200px; height: 200px; padding: 10px; border-radius: 50px;">
                             </div>
                             <div class="col-abt">
                                 <p style="font-size: 20px; font-weight: bold; color: rgb(238, 158, 83); border-left: 20px solid rgb(141, 105, 240); width: fit-content; margin-left: 40%;">Cannoli</p>
@@ -120,7 +147,7 @@
                     </div>
                 </div>
                 <div class="bottom-menu">
-                    <a href="main/main-menu.php" style="color: seashell;"><p>SEE MORE<i class='fas fa-arrow-right' style='font-size:25px;color:rgb(241, 221, 163); padding: 0 0 0 10px;'></i></p>
+                    <a href="main-menu.php" style="color: seashell;"><p>SEE MORE<i class='fas fa-arrow-right' style='font-size:25px;color:rgb(241, 221, 163); padding: 0 0 0 10px;'></i></p>
                     </a>
                 </div>
             </div>
